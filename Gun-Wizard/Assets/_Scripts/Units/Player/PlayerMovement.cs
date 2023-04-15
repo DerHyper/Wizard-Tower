@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     //acts as the  motor to move the player
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D rb;
 
     //stores Player movement
     Vector2 movement;
@@ -23,6 +23,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //moves the rigid body to a new position and collides if sth is in the way
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
