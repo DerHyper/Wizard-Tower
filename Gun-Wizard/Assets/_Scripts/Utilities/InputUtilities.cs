@@ -4,23 +4,27 @@ using UnityEngine;
 
 public static class InputUtilities
 {
+    [System.Obsolete("Use new Unity Input System")]
     // Retruns true if a fire button or joystick is pushed in any direction
     public static bool fireButtonPushed()
     {
         return ControllerFireButtonPushed() || KeyboardFireButtonPushed();
     }
 
+    [System.Obsolete("Use new Unity Input System")]
     private static bool ControllerFireButtonPushed()
     {
         return Input.GetAxis("Horizontal Shoot Joystick") != 0 || Input.GetAxis("Vertical Shoot Joystick") != 0;
     }
+
+    [System.Obsolete("Use new Unity Input System")]
 
     private static bool KeyboardFireButtonPushed()
     {
         return Input.GetAxis("Horizontal Shoot") != 0 || Input.GetAxis("Vertical Shoot") != 0;
     }
 
-
+    [System.Obsolete("Use new Unity Input System")]
     public static Vector3 ShootDirectionAsVector3() {
         if (ControllerFireButtonPushed())
         {
@@ -36,6 +40,7 @@ public static class InputUtilities
         }
     }
 
+    [System.Obsolete("Use new Unity Input System")]
     private static Vector3 JoystickShootDirectionAsVector3()
     {
         return new Vector3(
@@ -45,6 +50,7 @@ public static class InputUtilities
             );
     }
 
+    [System.Obsolete("Use new Unity Input System")]
     private static Vector3 KeyboardShootDirectionAsVector3()
     {
         switch (Input.GetAxis("Horizontal Shoot"))
