@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8142486258118601793}
   - component: {fileID: 8142486258118601798}
   - component: {fileID: 8142486258118601799}
+  - component: {fileID: 5576649008715868221}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: Untagged
@@ -123,3 +124,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.165
+--- !u!114 &5576649008715868221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142486258118601797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658192803f4758046bb30d08d6ad67eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,8 +10,13 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField]
     Logger logger;
+    
+    [SerializeField]
+    GameObject bullet;
 
     public InputAction inputAction;
+
+
 
     private void OnEnable()
     {
@@ -29,6 +34,8 @@ public class PlayerShoot : MonoBehaviour
 
         if (shootDirection.magnitude > 0)
         {
+            logger.Log(Quaternion.Euler(shootDirection), this);
+            Instantiate(bullet, gameObject.transform.position, Quaternion.LookRotation(Vector3.forward, shootDirection)*Quaternion.Euler(0, 0, 90));
             logger.Log("FIRE!",this);
         }
     }
