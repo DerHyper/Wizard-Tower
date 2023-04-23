@@ -32,6 +32,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (GetIsShooting() && GetCanShootAgain())
         {
+            timeSinceLastShoot=0;
             ShootBullet();
         }
     }
@@ -87,15 +88,7 @@ public class PlayerShoot : MonoBehaviour
     // returns true if Player can shoot again
     private bool GetCanShootAgain()
     {
-        timeSinceLastShoot += Time.deltaTime;
-        if (timeSinceLastShoot > shootingInterval)
-        {
-            timeSinceLastShoot = 0;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        timeSinceLastShoot += Time.fixedDeltaTime;
+        return timeSinceLastShoot >= shootingInterval;
     }
 }
