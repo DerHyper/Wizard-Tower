@@ -5,17 +5,27 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField]
+    [Header("Gun Settings")]
     int damage = 20;
     [SerializeField]
-    int speed = 20;
+    int bulletSpeed = 20;
+    [SerializeField]
+    int shootingSpeed = 20;
 
     public int GetDamage()
     {
         return damage;
     }
 
-    public int GetSpeed()
+    // Get the speed the Bullet is traveling
+    public int GetBulletSpeed()
     {
-        return speed;
+        return bulletSpeed;
+    }
+
+    // Get ShootingSpeed in Bullets per second 
+    public int GetShootingSpeed()
+    {
+        return shootingSpeed;
     }
 }

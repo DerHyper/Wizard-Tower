@@ -15,8 +15,9 @@ public class PlayerShoot : MonoBehaviour
     GameObject bullet;
 
     public InputAction inputAction;
-
-
+    private Gun gun;
+    private float shootingInterval;
+    private float timeSinceLastShoot;
 
     private void OnEnable()
     {
@@ -27,19 +28,74 @@ public class PlayerShoot : MonoBehaviour
         inputAction.Disable();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 shootDirection = inputAction.ReadValue<Vector2>();
-
-        if (shootDirection.magnitude > 0)
+        if (GetIsShooting() && GetCanShootAgain())
         {
-            logger.Log(Quaternion.Euler(shootDirection), this);
-            Instantiate(bullet, gameObject.transform.position, Quaternion.LookRotation(Vector3.forward, shootDirection)*Quaternion.Euler(0, 0, 90));
-            logger.Log("FIRE!",this);
+            ShootBullet();
         }
     }
 
-    
+    void Start()
+    {
+        shootingInterval = GetShootingInterval();
+    }
 
+    // Returns 
+    private float GetShootingInterval()
+    {
+        try
+        {
+            gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
+            return 1.0f/gun.GetShootingSpeed();
+        }
+        catch (System.Exception)
+        {
+            logger.Log("No gun found",this);
+            return shootingInterval = 0.1f;
+        }
+    }
+
+    // Retruns 'true' is the player is pressing a shoot-button (e.g. Arrow Keys or the right Joystick of a Gamepad)
+    private bool GetIsShooting()
+    {
+        Vector2 shootDirection = inputAction.ReadValue<Vector2>();
+        return shootDirection.magnitude > 0;
+    }
+
+    // Transforms Input-Vektor to a Quaternion
+    private Quaternion GetShootQuaternion()
+    {
+        Vector2 shootDirection = inputAction.ReadValue<Vector2>();
+        Quaternion OriginalQuaternion = Quaternion.LookRotation(Vector3.forward, shootDirection);
+        Quaternion TransformedQuaternion = OriginalQuaternion * Quaternion.Euler(0, 0, 90);
+        return TransformedQuaternion;
+    } 
+
+    // Spawns a Bullet with the attributes of the Gun equipped.
+    private void ShootBullet()
+    {
+        logger.Log("FIRE!",this);
+
+        Instantiate(
+            bullet, 
+            gameObject.transform.position, 
+            GetShootQuaternion()
+        );
+    }
+    
+    // returns true if Player can shoot again
+    private bool GetCanShootAgain()
+    {
+        timeSinceLastShoot += Time.deltaTime;
+        if (timeSinceLastShoot > shootingInterval)
+        {
+            timeSinceLastShoot = 0;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
