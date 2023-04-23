@@ -30,4 +30,9 @@ public class GunBullet : IBullet
             speed = 20;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.name);
+        Destroy(gameObject);
+    }
 }
