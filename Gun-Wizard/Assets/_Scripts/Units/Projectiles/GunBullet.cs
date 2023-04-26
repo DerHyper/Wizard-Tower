@@ -8,12 +8,14 @@ public class GunBullet : IBullet
     int speed;
     Gun gun;
     Rigidbody2D rb;
+    Logger logger;
     
     void Start()
     {
         GetGunAttributes();
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+        logger = GameObject.FindObjectOfType<Logger>();
     }
 
     private void GetGunAttributes() 
@@ -26,6 +28,7 @@ public class GunBullet : IBullet
         }
         catch (System.Exception)
         {
+            Debug.Log("No Gun found");
             damage = 20;
             speed = 20;
         }
@@ -33,6 +36,15 @@ public class GunBullet : IBullet
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.name);
-        Destroy(gameObject);
+        
+        try
+        {
+            other.GetComponent<EnemieHealth>().DamageHealth(damage);
+            Debug.Log("Damage on'"+other.name+"'.", this);
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("No Health-Script found for '"+other.name+"'.", this);
+        }
     }
 }
