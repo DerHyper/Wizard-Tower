@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -14,23 +14,14 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
-    public InputAction inputAction;
+    public InputManager inputManager;
     private Gun gun;
     private float shootingInterval;
     private float timeSinceLastShoot;
 
-    private void OnEnable()
-    {
-        inputAction.Enable();
-    }
-
-    private void OnDisable() {
-        inputAction.Disable();
-    }
-
     void FixedUpdate()
     {
-        if (GetIsShooting() && GetCanShootAgain())
+        if (inputManager.GetIsShooting() && GetCanShootAgain())
         {
             timeSinceLastShoot=0;
             ShootBullet();
@@ -39,39 +30,48 @@ public class PlayerShoot : MonoBehaviour
 
     void Start()
     {
-        shootingInterval = GetShootingInterval();
+        UpdateInstances();
     }
 
-    // Returns 
-    private float GetShootingInterval()
+    // Updates all Class-Instances to the current ones in use
+    private void UpdateInstances()
+    {
+        gun = FindPlayerGun();
+        shootingInterval = GetShootingInterval();
+        inputManager = FindInputManager();
+    }
+
+    // Returns the current Gun from the Player. if no gun is equiped return a standart-Gun
+    private Gun FindPlayerGun()
     {
         try
         {
-            gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
-            return 1.0f/gun.GetShootingSpeed();
+            return GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
         }
         catch (System.Exception)
         {
             logger.Log("No gun found",this);
-            return shootingInterval = 0.1f;
+            return new Gun();
         }
     }
 
-    // Retruns 'true' is the player is pressing a shoot-button (e.g. Arrow Keys or the right Joystick of a Gamepad)
-    private bool GetIsShooting()
+    private float GetShootingInterval()
     {
-        Vector2 shootDirection = inputAction.ReadValue<Vector2>();
-        return shootDirection.magnitude > 0;
+        return 1.0f/gun.GetShootingSpeed();
     }
 
-    // Transforms Input-Vektor to a Quaternion
-    private Quaternion GetShootQuaternion()
+    private InputManager FindInputManager()
     {
-        Vector2 shootDirection = inputAction.ReadValue<Vector2>();
-        Quaternion OriginalQuaternion = Quaternion.LookRotation(Vector3.forward, shootDirection);
-        Quaternion TransformedQuaternion = OriginalQuaternion * Quaternion.Euler(0, 0, 90);
-        return TransformedQuaternion;
-    } 
+        try
+        {
+            return GameObject.FindObjectOfType<InputManager>();
+        }
+        catch (System.Exception)
+        {
+            logger.Log("No gun found",this);
+            return new InputManager();
+        }
+    }
 
     // Spawns a Bullet with the attributes of the Gun equipped.
     private void ShootBullet()
@@ -80,8 +80,8 @@ public class PlayerShoot : MonoBehaviour
 
         Instantiate(
             bullet, 
-            gameObject.transform.position, 
-            GetShootQuaternion()
+            gameObject.transform.position + firePoint.transform.localPosition, 
+            inputManager.GetShootQuaternion()
         );
     }
     
