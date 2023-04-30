@@ -80,7 +80,7 @@ public class PlayerShoot : MonoBehaviour
 
         Instantiate(
             bullet, 
-            gameObject.transform.position + firePoint.transform.localPosition, 
+            firePoint.transform.position, 
             inputManager.GetShootQuaternion()
         );
     }
