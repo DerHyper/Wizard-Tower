@@ -36,36 +36,9 @@ public class PlayerShoot : MonoBehaviour
     // Updates all Class-Instances to the current ones in use
     private void UpdateInstances()
     {
-        gunDisplay = FindPlayerGun();
+        gunDisplay = Finder.FindPlayerGun();
         shootingInterval = gunDisplay.GetShootingInterval();
-        inputManager = FindInputManager();
-    }
-
-    // Returns the current Gun from the Player. if no gun is equiped return a standart-Gun
-    private GunDisplay FindPlayerGun()
-    {
-        try
-        {
-            return GameObject.FindGameObjectWithTag("Player").GetComponent<GunDisplay>();
-        }
-        catch (System.Exception)
-        {
-            logger.Log("No gun found",this);
-            return new GunDisplay();
-        }
-    }
-
-    private InputManager FindInputManager()
-    {
-        try
-        {
-            return GameObject.FindObjectOfType<InputManager>();
-        }
-        catch (System.Exception)
-        {
-            logger.Log("No gun found",this);
-            return new InputManager();
-        }
+        inputManager = Finder.FindInputManager();
     }
 
     // Spawns a Bullet with the attributes of the Gun equipped.

@@ -17,10 +17,10 @@ public class GunBullet : IBullet
 
     private void UpdateInstances() 
     {
-        gun = GameObject.FindGameObjectWithTag("Player").GetComponent<GunDisplay>();
+        gun = Finder.FindPlayerGun();
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * gun.GetBulletSpeed();
-        logger = GameObject.FindObjectOfType<Logger>();
+        logger = Finder.FindLogger();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

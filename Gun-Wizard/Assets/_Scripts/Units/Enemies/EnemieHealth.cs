@@ -11,7 +11,7 @@ public class EnemieHealth : MonoBehaviour
     private void Start() {
         totalHealth = 30;
         currenHealth = 30;
-        logger = GameObject.FindAnyObjectByType<Logger>();
+        logger = Finder.FindLogger();
     }
 
     public void DamageHealth(int damage)
