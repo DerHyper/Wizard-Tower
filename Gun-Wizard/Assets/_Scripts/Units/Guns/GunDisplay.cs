@@ -2,30 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class GunDisplay: MonoBehaviour
 {
     [SerializeField]
-    [Header("Gun Settings")]
-    int damage = 20;
-    [SerializeField]
-    int bulletSpeed = 20;
-    [SerializeField]
-    int shootingSpeed = 20;
+    Gun gun;
 
+    private void Start() {
+        
+    }
     public int GetDamage()
     {
-        return damage;
+        return gun.damage;
     }
 
     // Get the speed the Bullet is traveling
     public int GetBulletSpeed()
     {
-        return bulletSpeed;
+        return gun.bulletSpeed;
     }
 
     // Get ShootingSpeed in Bullets per second 
     public int GetShootingSpeed()
     {
-        return shootingSpeed;
+        return gun.shootingSpeed;
+    }
+
+    public float GetShootingInterval()
+    {
+        return 1.0f/gun.shootingSpeed;
     }
 }

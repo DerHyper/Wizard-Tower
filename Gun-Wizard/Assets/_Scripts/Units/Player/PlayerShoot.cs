@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour
     GameObject bullet;
 
     public InputManager inputManager;
-    private Gun gun;
+    private GunDisplay gunDisplay;
     private float shootingInterval;
     private float timeSinceLastShoot;
 
@@ -36,28 +36,23 @@ public class PlayerShoot : MonoBehaviour
     // Updates all Class-Instances to the current ones in use
     private void UpdateInstances()
     {
-        gun = FindPlayerGun();
-        shootingInterval = GetShootingInterval();
+        gunDisplay = FindPlayerGun();
+        shootingInterval = gunDisplay.GetShootingInterval();
         inputManager = FindInputManager();
     }
 
     // Returns the current Gun from the Player. if no gun is equiped return a standart-Gun
-    private Gun FindPlayerGun()
+    private GunDisplay FindPlayerGun()
     {
         try
         {
-            return GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
+            return GameObject.FindGameObjectWithTag("Player").GetComponent<GunDisplay>();
         }
         catch (System.Exception)
         {
             logger.Log("No gun found",this);
-            return new Gun();
+            return new GunDisplay();
         }
-    }
-
-    private float GetShootingInterval()
-    {
-        return 1.0f/gun.GetShootingSpeed();
     }
 
     private InputManager FindInputManager()
