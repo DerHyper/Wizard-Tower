@@ -6,22 +6,27 @@ using TMPro;
 
 public class ItemCollector : MonoBehaviour
 {
-    Coin coin;
     [SerializeField] private TextMeshProUGUI coinText;
     private int coins = 0;
 
-    void Start() {
-        coin = GameObject.Find("MoneyManager").GetComponent<Coin>();
+    void Start() 
+    {
+        
     }
 
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Coin"))
+        GameObject other = collider.gameObject;
+
+        if (other.CompareTag("Coin"))
         {
-            Destroy(collider.gameObject);
-            coins += coin.getValue();
-            coinText.text = "Coins: " + coins;
+            if (other.GetComponent<MoneyDisplay>() != null)
+            {
+                coins += other.GetComponent<MoneyDisplay>().GetValue();
+                coinText.text = "Coins: " + coins;
+            }
+            Destroy(other); 
         }
     }
 
