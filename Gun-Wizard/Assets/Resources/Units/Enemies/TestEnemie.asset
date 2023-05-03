@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5998cc7db2cd0419f026806190b1be, type: 3}
-  m_Name: MachineGun
+  m_Script: {fileID: 11500000, guid: 66a02b1c37be5ef4da76354990dc0b5f, type: 3}
+  m_Name: TestEnemie
   m_EditorClassIdentifier: 
-  name: Machine Gun
-  description: A Machine Gun
-  artwork: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  damage: 3
-  bulletSpeed: 25
-  shootingSpeed: 20
+  name: TestEnemie
+  description: Just a Test one
+  artwork: {fileID: 21300000, guid: 17fa84703485d314b8d6b5216987d4b1, type: 3}
+  movementSpeed: 5
+  maxHealth: 30
