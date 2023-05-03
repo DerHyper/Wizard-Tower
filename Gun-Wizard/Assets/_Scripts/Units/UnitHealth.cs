@@ -10,7 +10,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private int currenHealth;
     Logger logger;
 
-    private void Start() {
+    public void Start() {
         SetHealthToUnitStandart();
         logger = Finder.FindLogger();
     }
@@ -22,23 +22,23 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
         currenHealth = maxHealth;
     }
 
-
     public void DamageHealth(int amount)
     {
+        logger.Log("Unit '"+this.name+"' , "+currenHealth+", -"+amount, this);
         if (currenHealth-amount > 0)
         {
             currenHealth -= amount;
         }
-        else if (currenHealth-amount < 0)
+        else if (currenHealth-amount <= 0)
         {
             currenHealth = 0;
             Die();
         }
     }
 
-    private void Die()
+    public void Die()
     {
-        logger.Log("Enemy '"+this.name+"' dead.", this);
+        logger.Log("Unit '"+this.name+"' dead.", this);
         Destroy(gameObject);
     }
 
