@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameState State;
+    Logger logger;
 
     public static event Action<GameState> OnGameStateChanged;
 
@@ -15,29 +16,35 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-        UpdateGameState(GameState.Loading);
+        UpdateGameState(GameState.Playing);
+        logger = Finder.FindLogger();
     }
 
     public void UpdateGameState(GameState newState) {
         State = newState;
-
+        logger?.Log($"Player is now in {newState}-State", this);
         switch (newState)
         {
             case GameState.Loading:
-                UpdateGameState(GameState.Playing);
                 break;
             case GameState.Playing:
                 break;
             case GameState.LevelComplete:
                 break;
             case GameState.PlayerDead:
+                HandlePlayerDead();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState));
         }
-
         OnGameStateChanged?.Invoke(newState);
     }
+
+    private void HandlePlayerDead()
+    {
+        //throw new NotImplementedException();
+    }
+
 }
 
 public enum GameState{

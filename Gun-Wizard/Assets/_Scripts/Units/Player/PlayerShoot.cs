@@ -18,12 +18,25 @@ public class PlayerShoot : MonoBehaviour
     private GunDisplay gunDisplay;
     private float shootingInterval;
     private float timeSinceLastShoot;
+    private bool isPlaying;
+
+    private void Awake() {
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+    }
+
+    private void OnDestroy() {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+
+    private void GameManagerOnGameStateChanged(GameState state) {
+        isPlaying = (state == GameState.Playing || state == GameState.LevelComplete);
+    }
 
     void FixedUpdate()
     {
-        if (inputManager.GetIsShooting() && GetCanShootAgain())
+        if (CanShoot())
         {
-            timeSinceLastShoot=0;
+            timeSinceLastShoot = 0;
             ShootBullet();
         }
     }
@@ -55,9 +68,10 @@ public class PlayerShoot : MonoBehaviour
     }
     
     // returns true if Player can shoot again
-    private bool GetCanShootAgain()
+    private bool CanShoot()
     {
         timeSinceLastShoot += Time.fixedDeltaTime;
-        return timeSinceLastShoot >= shootingInterval;
+        bool canShootAgain = timeSinceLastShoot >= shootingInterval;
+        return isPlaying && inputManager.ShootButtonPressed() && canShootAgain;
     }
 }

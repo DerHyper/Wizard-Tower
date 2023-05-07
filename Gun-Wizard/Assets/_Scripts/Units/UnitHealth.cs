@@ -36,7 +36,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         logger.Log("Unit '"+this.name+"' dead.", this);
         Destroy(gameObject);

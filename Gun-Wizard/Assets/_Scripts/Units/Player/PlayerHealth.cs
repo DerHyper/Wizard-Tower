@@ -6,10 +6,10 @@ public class PlayerHealth : UnitHealth
 {
     Logger logger;
 
-    public new void Die()
+    public override void Die()
     {
         logger = Finder.FindLogger();
         logger.Log("Player '"+this.name+"' dead.", this);
-        Destroy(gameObject);
+        GameManager.Instance.UpdateGameState(GameState.PlayerDead);
     }
 }

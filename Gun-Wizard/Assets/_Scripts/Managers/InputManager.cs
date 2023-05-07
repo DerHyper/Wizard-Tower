@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
     }
 
     // Retruns 'true' is the player is pressing a shoot-button (e.g. Arrow Keys or the right Joystick of a Gamepad)
-    public bool GetIsShooting()
+    public bool ShootButtonPressed()
     {
         Vector2 shootDirection = shootingInput.ReadValue<Vector2>();
         return shootDirection.magnitude > 0;
