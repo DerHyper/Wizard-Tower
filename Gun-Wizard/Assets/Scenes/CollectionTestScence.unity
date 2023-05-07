@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0}
   iterations: 1
-  walkLength: 10
+  walkLength: 20
   startRandomly: 1
   tilemapVisualizer: {fileID: 873894589}
 --- !u!4 &2059514571
