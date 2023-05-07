@@ -21,9 +21,13 @@ public class RandomWalkGenerator : MonoBehaviour
     [SerializeField]
     public bool startRandomly = true;
 
+    [SerializeField]
+    private TilemapVisualizer tilemapVisualizer;
+
     public void RunProceduralGeneration()
     {
         HashSet<Vector2Int> floorPos = RunRandomWalk();
+        tilemapVisualizer.PaintFloorTiles(floorPos);
         foreach (var position in floorPos)
         {
             Debug.Log(position); //Visualizing
