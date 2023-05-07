@@ -39,6 +39,7 @@ public class PlayerShoot : MonoBehaviour
         gunDisplay = Finder.FindPlayerGun();
         shootingInterval = gunDisplay.GetShootingInterval();
         inputManager = Finder.FindInputManager();
+        logger = Finder.FindLogger();
     }
 
     // Spawns a Bullet with the attributes of the Gun equipped.
