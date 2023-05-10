@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerDead()
     {
+        
         //throw new NotImplementedException();
     }
 
