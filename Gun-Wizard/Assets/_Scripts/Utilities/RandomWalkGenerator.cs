@@ -26,7 +26,7 @@ public class RandomWalkGenerator : AbstractDungeonGenerater
         HashSet<Vector2Int> floorPos = new HashSet<Vector2Int>();
         for (int i = 0; i < randomWalkParameters.iterations; i++)
         {
-            var path = RandomWalkAlgorithm.SimpleRandomWalk(currentPos, randomWalkParameters.walkLength);
+            var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPos, randomWalkParameters.walkLength);
             floorPos.UnionWith(path); //union both, without duplicates
             if (randomWalkParameters.startRandomly)
             {
