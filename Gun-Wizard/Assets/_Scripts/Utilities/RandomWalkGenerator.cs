@@ -5,11 +5,8 @@ using System.Linq; //Library to query any Collection
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RandomWalkGenerator : MonoBehaviour
+public class RandomWalkGenerator : AbstractDungeonGenerater
 {
-    [SerializeField]
-    protected Vector2Int startPos = Vector2Int.zero;
-
     //maximum possible iterations
     //in average it will be less, because it does not save fields that were visited twice
     [SerializeField]
@@ -21,10 +18,7 @@ public class RandomWalkGenerator : MonoBehaviour
     [SerializeField]
     public bool startRandomly = true;
 
-    [SerializeField]
-    private TilemapVisualizer tilemapVisualizer;
-
-    public void RunProceduralGeneration()
+    protected override void RunProceduralGeneration()
     {
         HashSet<Vector2Int> floorPos = RunRandomWalk();
         tilemapVisualizer.Clear();
@@ -33,7 +27,7 @@ public class RandomWalkGenerator : MonoBehaviour
 
     protected HashSet<Vector2Int> RunRandomWalk()
     {
-        var currentPos = startPos;
+        var currentPos = startPosition;
         HashSet<Vector2Int> floorPos = new HashSet<Vector2Int>();
         for (int i = 0; i < iterations; i++)
         {

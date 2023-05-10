@@ -528,6 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 654506827}
   - component: {fileID: 654506826}
+  - component: {fileID: 654506828}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -562,6 +563,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654506828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654506825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df874ad5c1100b409b8d3ba011a0625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 1
 --- !u!1 &755550157
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,8 +1006,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2059514570}
-        m_TargetAssemblyTypeName: RandomWalkGenerator, Assembly-CSharp
-        m_MethodName: RunProceduralGeneration
+        m_TargetAssemblyTypeName: AbstractDungeonGenerater, Assembly-CSharp
+        m_MethodName: GenerateDungeon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1453,11 +1467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc321f56ca11e344a8e5f1e355493a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0}
-  iterations: 1
-  walkLength: 20
-  startRandomly: 1
   tilemapVisualizer: {fileID: 873894589}
+  startPosition: {x: 0, y: 0}
+  iterations: 10
+  walkLength: 10
+  startRandomly: 0
 --- !u!4 &2059514571
 Transform:
   m_ObjectHideFlags: 0
