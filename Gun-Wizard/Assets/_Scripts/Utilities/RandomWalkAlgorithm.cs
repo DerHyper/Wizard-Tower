@@ -20,8 +20,24 @@ public static class RandomWalkAlgorithm
 
         return path;
     }
+
+    //List beacuse we want to know, which was the last position we visited
+    public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPosition, int corridorLength)
+    {
+        List<Vector2Int> corridor = new List<Vector2Int>();
+        var direction = Direction2D.GetRandomCardinalDirection();
+        var currentPos = startPosition;
+        corridor.Add(currentPos); //start position
+        for (int i = 0; i < corridorLength; i++)
+        {
+            currentPos += direction;
+            corridor.Add(currentPos);
+        }
+        return corridor;
+    }
    
 }
+
 
 public static class Direction2D
 {
