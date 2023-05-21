@@ -975,8 +975,11 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 786146919}
-    m_RemovedComponents:
-    - {fileID: 364474235, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
+    - target: {fileID: 2861508001197340157, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.368
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
 --- !u!1 &781087453
 GameObject:
@@ -1166,6 +1169,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Shooting Input
       m_Flags: 8
+    - m_Name: 
+      m_Id: fbca8297-e64f-4ca3-a5a3-ce64df87543d
+      m_Path: <Mouse>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting Input
+      m_Flags: 0
     m_Flags: 0
 --- !u!114 &786146920
 MonoBehaviour:
@@ -1558,42 +1569,22 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!1 &1194985669 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2861508000259758025, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
-  m_PrefabInstance: {fileID: 698926300}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1194985670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2861508000259758024, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
   m_PrefabInstance: {fileID: 698926300}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1194985671
+--- !u!114 &1194985677 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1194985677, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
+  m_PrefabInstance: {fileID: 698926300}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194985669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4053d9aef0a8f7041ac39e244f2a1a97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: f6f27c7ffb20c974998252986788e8ae, type: 2}
---- !u!114 &1194985677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194985669}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75112baa80777484ea6d781e88939874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 11400000, guid: 7c9332ca63aa7334eacc44fa76032095, type: 2}
 --- !u!1 &1475352400
 GameObject:
   m_ObjectHideFlags: 0
