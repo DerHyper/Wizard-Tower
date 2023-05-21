@@ -1554,7 +1554,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_69
+      name: wall_bottom_middle
       rect:
         serializedVersion: 2
         x: 16
@@ -2016,7 +2016,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_91
+      name: wall_top_middle
       rect:
         serializedVersion: 2
         x: 16
@@ -2520,7 +2520,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_115
+      name: wall_left_middle
       rect:
         serializedVersion: 2
         x: 48
@@ -2541,7 +2541,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_116
+      name: wall_right_middle
       rect:
         serializedVersion: 2
         x: 64
@@ -6308,8 +6308,6 @@ TextureImporter:
       Tiles_112: -140142441
       Tiles_113: -1687412428
       Tiles_114: -598554797
-      Tiles_115: -1316289294
-      Tiles_116: -1334323184
       Tiles_117: -1893158046
       Tiles_118: -1458918111
       Tiles_119: 923823625
@@ -6539,7 +6537,6 @@ TextureImporter:
       Tiles_66: -1650488126
       Tiles_67: 1714973817
       Tiles_68: -2076094556
-      Tiles_69: -1381743145
       Tiles_7: 374218387
       Tiles_70: -1991238857
       Tiles_71: -932567631
@@ -6564,7 +6561,6 @@ TextureImporter:
       Tiles_89: -330801307
       Tiles_9: 550024420
       Tiles_90: -1990037239
-      Tiles_91: 743642421
       Tiles_92: -1512277334
       Tiles_93: -274835341
       Tiles_94: 635958744
@@ -6583,6 +6579,10 @@ TextureImporter:
       dungeon_floor_upper_left: -516769776
       dungeon_floor_upper_middle: 1996630080
       dungeon_floor_upper_right: -1025909807
+      wall_bottom_middle: -1381743145
+      wall_left_middle: -1316289294
+      wall_right_middle: -1334323184
+      wall_top_middle: 743642421
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
