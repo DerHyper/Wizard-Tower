@@ -17,7 +17,7 @@ public class PlayerShoot : MonoBehaviour
 
     public InputManager inputManager;
     private GunDisplay gunDisplay;
-    private WeaponParent weaponParent;
+    private WeaponRotation weaponParent;
     private float shootingInterval;
     private float timeSinceLastShoot;
     private bool isPlaying;
@@ -32,17 +32,6 @@ public class PlayerShoot : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state) {
         isPlaying = (state == GameState.Playing || state == GameState.LevelComplete);
-    }
-
-    private void Update() 
-    {
-        UpdateWeaponPointer();
-    }
-
-    private void UpdateWeaponPointer()
-    {
-        Vector2 pointerInput = inputManager.GetShootVektor();
-        weaponParent.SetPointerPosition(pointerInput);
     }
 
     void FixedUpdate()
@@ -66,7 +55,7 @@ public class PlayerShoot : MonoBehaviour
         shootingInterval = gunDisplay.GetShootingInterval();
         inputManager = Finder.FindInputManager();
         logger = Finder.FindLogger();
-        weaponParent = GetComponentInChildren<WeaponParent>();
+        weaponParent = GetComponentInChildren<WeaponRotation>();
     }
 
     // Spawns a Bullet with the attributes of the Gun equipped.
