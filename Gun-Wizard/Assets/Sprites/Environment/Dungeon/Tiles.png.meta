@@ -1533,7 +1533,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_68
+      name: wall_diagonal_corner_up_left
       rect:
         serializedVersion: 2
         x: 0
@@ -1575,7 +1575,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_70
+      name: wall_diagonal_corner_up_right
       rect:
         serializedVersion: 2
         x: 32
@@ -1995,7 +1995,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_90
+      name: wall_diagonal_corner_down_left
       rect:
         serializedVersion: 2
         x: 0
@@ -2037,7 +2037,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_92
+      name: wall_diagonal_corner_down_right
       rect:
         serializedVersion: 2
         x: 32
@@ -2058,7 +2058,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_93
+      name: wall_inner_corner_up_left
       rect:
         serializedVersion: 2
         x: 48
@@ -2079,7 +2079,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_94
+      name: wall_inner_corner_up_right
       rect:
         serializedVersion: 2
         x: 64
@@ -2919,7 +2919,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_134
+      name: wall_inner_corner_down_left
       rect:
         serializedVersion: 2
         x: 48
@@ -2940,7 +2940,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_135
+      name: wall_inner_corner_down_right
       rect:
         serializedVersion: 2
         x: 64
@@ -6474,8 +6474,6 @@ TextureImporter:
       Tiles_131: -1564913566
       Tiles_132: 1954591343
       Tiles_133: -1446183739
-      Tiles_134: 114955722
-      Tiles_135: -534491028
       Tiles_136: -28958928
       Tiles_137: 933403833
       Tiles_138: -35693694
@@ -6691,9 +6689,7 @@ TextureImporter:
       Tiles_65: 1324919830
       Tiles_66: -1650488126
       Tiles_67: 1714973817
-      Tiles_68: -2076094556
       Tiles_7: 374218387
-      Tiles_70: -1991238857
       Tiles_71: -932567631
       Tiles_72: -620905618
       Tiles_73: -59519852
@@ -6715,10 +6711,6 @@ TextureImporter:
       Tiles_88: 631688270
       Tiles_89: -330801307
       Tiles_9: 550024420
-      Tiles_90: -1990037239
-      Tiles_92: -1512277334
-      Tiles_93: -274835341
-      Tiles_94: 635958744
       Tiles_95: -1425724121
       Tiles_96: -386371978
       Tiles_97: 1775351166
@@ -6735,9 +6727,17 @@ TextureImporter:
       dungeon_floor_upper_middle: 1996630080
       dungeon_floor_upper_right: -1025909807
       wall_bottom_middle: -1381743145
-      wall_left_middle: -1316289294
-      wall_right_middle: -1334323184
-      wall_top_middle: 743642421
+      wall_diagonal_corner_down_left: -1990037239
+      wall_diagonal_corner_down_right: -1512277334
+      wall_diagonal_corner_up_left: -2076094556
+      wall_diagonal_corner_up_right: -1991238857
+      wall_inner_corner_down_left: 114955722
+      wall_inner_corner_down_right: -534491028
+      wall_inner_corner_up_left: -274835341
+      wall_inner_corner_up_right: -274835341
+      wall_left_middle: -1334323184
+      wall_right_middle: 743642421
+      wall_top_middle: 635958744
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
