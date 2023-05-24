@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class PlayerShoot : MonoBehaviour
 
     public InputManager inputManager;
     private GunDisplay gunDisplay;
+    private WeaponRotation weaponParent;
     private float shootingInterval;
     private float timeSinceLastShoot;
     private bool isPlaying;
@@ -53,6 +55,7 @@ public class PlayerShoot : MonoBehaviour
         shootingInterval = gunDisplay.GetShootingInterval();
         inputManager = Finder.FindInputManager();
         logger = Finder.FindLogger();
+        weaponParent = GetComponentInChildren<WeaponRotation>();
     }
 
     // Spawns a Bullet with the attributes of the Gun equipped.
@@ -63,7 +66,7 @@ public class PlayerShoot : MonoBehaviour
         Instantiate(
             bullet, 
             firePoint.transform.position, 
-            inputManager.GetShootQuaternion()
+            weaponParent.transform.rotation
         );
     }
     
