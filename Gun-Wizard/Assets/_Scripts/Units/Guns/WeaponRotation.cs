@@ -8,9 +8,15 @@ public class WeaponRotation : MonoBehaviour
     private InputManager inputManager;
     private Vector2 PointerPosition;
     private Vector2 OriginalWeaponScale;
+    private SpriteRenderer playerSprite;
+    private SpriteRenderer weaponSprite;
+
     private void Start() 
     {
         inputManager = Finder.FindInputManager();
+        //Expects that Parent-GO has Player-Sprite
+        playerSprite = transform.parent.GetComponent<SpriteRenderer>();
+        weaponSprite = GetComponentInChildren<SpriteRenderer>();
         OriginalWeaponScale = transform.localScale;
     }
 
@@ -24,27 +30,39 @@ public class WeaponRotation : MonoBehaviour
         PointerPosition = inputManager.GetShootVektor();
         Vector2 direktion = (PointerPosition - (Vector2)transform.position).normalized;
         transform.right = direktion;
-        FlipWeaponIfLookingBackwards(direktion);
-        FlipPlayerIfLookingBackwards(direktion);
+        FlipWeaponIfLookingBackwards();
+        FlipPlayerIfLookingBackwards();
+        ChangeLayerIfBehindPlayer();
     }
 
-    private void FlipPlayerIfLookingBackwards(Vector2 direktion)
+    private void ChangeLayerIfBehindPlayer()
     {
-        SpriteRenderer player = GetComponentInParent<SpriteRenderer>();
-        if (direktion.x < 0)
+        if (transform.eulerAngles.z > 0 && transform.eulerAngles.z < 180)
         {
-            player.flipX = true;
+            weaponSprite.sortingOrder = playerSprite.sortingOrder-1;
         }
         else
         {
-            player.flipX = false;
+            weaponSprite.sortingOrder = playerSprite.sortingOrder+1;
         }
     }
 
-    private void FlipWeaponIfLookingBackwards(Vector2 direktion)
+    private void FlipPlayerIfLookingBackwards()
+    {
+        if (transform.right.x < 0)
+        {
+            playerSprite.flipX = true;
+        }
+        else
+        {
+            playerSprite.flipX = false;
+        }
+    }
+
+    private void FlipWeaponIfLookingBackwards()
     {
         Vector2 newWeaponScale = transform.localScale;
-        if (direktion.x < 0)
+        if (transform.right.x < 0)
         {
             newWeaponScale.y = -OriginalWeaponScale.y;
         }

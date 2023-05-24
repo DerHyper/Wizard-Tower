@@ -23,12 +23,13 @@ public static class Finder
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            GunDisplay gunDisplay = player.GetComponent<GunDisplay>();
+            GunDisplay gunDisplay = player.GetComponentInChildren<GunDisplay>();
             if (gunDisplay != null)
             {
                 return gunDisplay;
             }
-            return player.AddComponent<GunDisplay>();
+            Debug.Log("Could not find GunDisplay");
+            throw new MissingComponentException();
         }
         Debug.Log("Could not find Player");
         throw new MissingComponentException();
