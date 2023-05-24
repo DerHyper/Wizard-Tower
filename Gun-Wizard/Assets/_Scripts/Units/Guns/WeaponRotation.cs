@@ -28,8 +28,8 @@ public class WeaponRotation : MonoBehaviour
     private void LookAtPointer()
     {
         PointerPosition = inputManager.GetShootVektor();
-        Vector2 direktion = (PointerPosition - (Vector2)transform.position).normalized;
-        transform.right = direktion;
+        Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
+        transform.right = direction;
         FlipWeaponIfLookingBackwards();
         FlipPlayerIfLookingBackwards();
         ChangeLayerIfBehindPlayer();
@@ -61,15 +61,13 @@ public class WeaponRotation : MonoBehaviour
 
     private void FlipWeaponIfLookingBackwards()
     {
-        Vector2 newWeaponScale = transform.localScale;
         if (transform.right.x < 0)
         {
-            newWeaponScale.y = -OriginalWeaponScale.y;
+            weaponSprite.flipY = true;
         }
-        else
+        else if (transform.right.x > 0)
         {
-            newWeaponScale.y = OriginalWeaponScale.y;
+            weaponSprite.flipY = false;
         }
-        transform.localScale = newWeaponScale;
     }
 }

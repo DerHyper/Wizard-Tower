@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pistol
   description: A simple pistol. Why did you bring that with you?
-  artwork: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  sprite: {fileID: -1874529682, guid: f61c5042f93162740827160c797774bb, type: 3}
   damage: 20
   bulletSpeed: 20
   shootingSpeed: 2

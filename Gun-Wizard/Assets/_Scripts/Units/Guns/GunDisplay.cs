@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,16 @@ public class GunDisplay: MonoBehaviour
     [SerializeField]
     Gun gun;
 
-    private void Start() {
-        
+    private void Start() 
+    {
+        SetSprite();
     }
+
+    private void SetSprite()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = gun.sprite;
+    }
+
     public int GetDamage()
     {
         return gun.damage;

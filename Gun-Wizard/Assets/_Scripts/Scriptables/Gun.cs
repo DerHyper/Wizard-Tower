@@ -7,7 +7,7 @@ public class Gun : ScriptableObject
 {
     public new string name;
     public string description;
-    public Sprite artwork;
+    public Sprite sprite;
     public int damage;
     public int bulletSpeed;
     public int shootingSpeed;
