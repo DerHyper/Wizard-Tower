@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   name: Bow
-  description: A Machine Gun
+  description: A simple bow
   sprite: {fileID: -1365348576, guid: ea4568972904e3548b095709827c4839, type: 3}
   damage: 42
-  bulletSpeed: 10
-  shootingSpeed: 1
+  knockback: 0

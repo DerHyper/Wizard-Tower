@@ -7,5 +7,5 @@ public abstract class IBullet : MonoBehaviour
 {
     int damage;
     int speed;
-    GunDisplay gunDisplay;
+    WeaponDisplay gunDisplay;
 }

@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="Gun", menuName = "ScriptableObject/Gun")]
-public class Gun : ScriptableObject
+[CreateAssetMenu(fileName ="Weapon", menuName = "ScriptableObject/Weapon/Weapon")]
+public class Weapon : ScriptableObject
 {
     public new string name;
     public string description;
     public Sprite sprite;
     public int damage;
-    public int bulletSpeed;
-    public int shootingSpeed;
+    public int knockback;
 }

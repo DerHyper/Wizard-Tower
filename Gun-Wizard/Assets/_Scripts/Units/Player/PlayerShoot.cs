@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
     GameObject bullet;
 
     public InputManager inputManager;
-    private GunDisplay gunDisplay;
+    private RangedWeaponDisplay weaponDisplay;
     private WeaponRotation weaponParent;
     private float shootingInterval;
     private float timeSinceLastShoot;
@@ -51,8 +51,8 @@ public class PlayerShoot : MonoBehaviour
     // Updates all Class-Instances to the current ones in use
     private void UpdateInstances()
     {
-        gunDisplay = Finder.FindPlayerGun();
-        shootingInterval = gunDisplay.GetShootingInterval();
+        weaponDisplay = Finder.FindPlayerGun();
+        shootingInterval = weaponDisplay.GetShootingInterval();
         inputManager = Finder.FindInputManager();
         logger = Finder.FindLogger();
         weaponParent = GetComponentInChildren<WeaponRotation>();

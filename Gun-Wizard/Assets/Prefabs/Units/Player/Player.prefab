@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4053d9aef0a8f7041ac39e244f2a1a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: f6f27c7ffb20c974998252986788e8ae, type: 2}
+  weapon: {fileID: 11400000, guid: f6f27c7ffb20c974998252986788e8ae, type: 2}
 --- !u!1 &2861508000259758025
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2236e0b951c9db45b3183b645e921b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   rb: {fileID: 2861508000259758026}
   inputAction:
     m_Name: Input
