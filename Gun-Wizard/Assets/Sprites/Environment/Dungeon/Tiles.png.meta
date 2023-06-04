@@ -6279,7 +6279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_4
+      name: wall_down_open
       rect:
         serializedVersion: 2
         x: 0
@@ -6287,7 +6287,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6300,7 +6300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_5
+      name: wall_right_open
       rect:
         serializedVersion: 2
         x: 16
@@ -6308,7 +6308,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6321,7 +6321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_6
+      name: wall_left_and_right_open
       rect:
         serializedVersion: 2
         x: 32
@@ -6329,7 +6329,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6342,7 +6342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_27
+      name: wall_left_open
       rect:
         serializedVersion: 2
         x: 48
@@ -6350,7 +6350,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6363,7 +6363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_28
+      name: wall_full
       rect:
         serializedVersion: 2
         x: 16
@@ -6371,7 +6371,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6384,7 +6384,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_29
+      name: wall_up_and_down_open
       rect:
         serializedVersion: 2
         x: 0
@@ -6392,7 +6392,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6405,7 +6405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_46
+      name: wall_up_open
       rect:
         serializedVersion: 2
         x: 0
@@ -6413,7 +6413,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6622,7 +6622,6 @@ TextureImporter:
       Tiles_267: 463187369
       Tiles_268: 747158478
       Tiles_269: -2138204465
-      Tiles_27: -616326672
       Tiles_270: -1234784925
       Tiles_271: -1634583735
       Tiles_272: 17620841
@@ -6633,7 +6632,6 @@ TextureImporter:
       Tiles_277: 1753444361
       Tiles_278: -568000430
       Tiles_279: 1366995463
-      Tiles_28: -1746684310
       Tiles_280: -984721867
       Tiles_281: 45994652
       Tiles_282: 359808341
@@ -6644,7 +6642,6 @@ TextureImporter:
       Tiles_287: 1104592233
       Tiles_288: 1466009739
       Tiles_289: -1103807335
-      Tiles_29: 494461198
       Tiles_290: -353590502
       Tiles_291: 1255673464
       Tiles_292: -110250735
@@ -6660,18 +6657,15 @@ TextureImporter:
       Tiles_37: 1446082340
       Tiles_38: 1229906502
       Tiles_39: -353922195
-      Tiles_4: 1743815910
       Tiles_40: 2051834288
       Tiles_41: -857781832
       Tiles_42: 168289676
       Tiles_43: 779191762
       Tiles_44: -17241057
       Tiles_45: -166507163
-      Tiles_46: -1300589061
       Tiles_47: 480307093
       Tiles_48: -1820248771
       Tiles_49: -1516241947
-      Tiles_5: 575383651
       Tiles_52: 835304684
       Tiles_53: -1664822492
       Tiles_54: -840352576
@@ -6680,7 +6674,6 @@ TextureImporter:
       Tiles_57: 1154064285
       Tiles_58: 1684178241
       Tiles_59: 1778739441
-      Tiles_6: -18342061
       Tiles_60: -1682324102
       Tiles_61: 727679354
       Tiles_62: 88699875
@@ -6731,13 +6724,20 @@ TextureImporter:
       wall_diagonal_corner_down_right: -1512277334
       wall_diagonal_corner_up_left: -2076094556
       wall_diagonal_corner_up_right: -1991238857
+      wall_down_open: 1743815910
+      wall_full: -1746684310
       wall_inner_corner_down_left: 114955722
       wall_inner_corner_down_right: -534491028
       wall_inner_corner_up_left: -274835341
       wall_inner_corner_up_right: -274835341
+      wall_left_and_right_open: -18342061
       wall_left_middle: -1334323184
+      wall_left_open: -616326672
       wall_right_middle: 743642421
+      wall_right_open: 575383651
       wall_top_middle: 635958744
+      wall_up_and_down_open: 494461198
+      wall_up_open: -1300589061
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -36,12 +36,12 @@ public class CorridorFirstDungeonGeneration : RandomWalkGenerator
 
         floorPositions.UnionWith(roomPositions);
 
-        //for (int i = 0; i < corridors.Count; i++)
-        //{
+        for (int i = 0; i < corridors.Count; i++)
+        {
             //corridors[i] = IncreaseCorridorSizeByOne(corridors[i]);
-          //  corridors[i] = IncreaseCorridorBrush3by3(corridors[i]);
-            //floorPositions.UnionWith(corridors[i]);
-        //}
+            corridors[i] = IncreaseCorridorBrush3by3(corridors[i]);
+            floorPositions.UnionWith(corridors[i]);
+        }
 
         tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);

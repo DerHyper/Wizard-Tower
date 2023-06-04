@@ -15,7 +15,8 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private TileBase floorTile, wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
         wallInnerCornerDownLeft, wallInnerCornerDownRight, wallInnerCornerUpLeft, wallInnerCornerUpRight,
-        wallDiagonalCornerDownLeft, wallDiagonalCornerDownRight, wallDiagonalCornerUpLeft, wallDiagonalCornerUpRight;
+        wallDiagonalCornerDownLeft, wallDiagonalCornerDownRight, wallDiagonalCornerUpLeft, wallDiagonalCornerUpRight,
+        wallOpenDown, wallOpenUp, wallOpenLeft, wallOpenRight, wallOpenLeftRight, wallOpenUpDown;
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
     {
@@ -111,13 +112,44 @@ public class TilemapVisualizer : MonoBehaviour
         {
             tile = wallDiagonalCornerUpRight;
         }
-        else if (WallTypesHelper.wallFullEightDirections.Contains(typeAsInt))
+        //else if (WallTypesHelper.wallFullEightDirections.Contains(typeAsInt))
+        //{
+        //  tile = wallFull;
+        //}
+        //else if (WallTypesHelper.wallBottmEightDirections.Contains(typeAsInt))
+        //{
+        //   tile = wallBottom;
+        //}
+
+        //three side walls
+        else if (WallTypesHelper.wallOpenDown.Contains(typeAsInt))
         {
-           tile = wallFull;
+            tile = wallOpenDown;
         }
-        else if (WallTypesHelper.wallBottmEightDirections.Contains(typeAsInt))
+
+        else if (WallTypesHelper.wallOpenUp.Contains(typeAsInt))
         {
-            tile = wallBottom;
+            tile = wallOpenUp;
+        }
+
+        else if (WallTypesHelper.wallOpenLeft.Contains(typeAsInt))
+        {
+            tile = wallOpenLeft;
+        }
+
+        else if (WallTypesHelper.wallOpenRight.Contains(typeAsInt))
+        {
+            tile = wallOpenRight;
+        }
+
+        else if (WallTypesHelper.wallOpenLeftRight.Contains(typeAsInt))
+        {
+            tile = wallOpenLeftRight;
+        }
+
+        else if (WallTypesHelper.wallOpenUpDown.Contains(typeAsInt))
+        {
+            tile = wallOpenUpDown;
         }
 
         if ( tile != null)
