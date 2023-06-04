@@ -23,4 +23,9 @@ public class MeleeWeaponDisplay: MonoBehaviour, WeaponDisplay
     {
         return weapon.damage;
     }
+
+    public int GetKnockback()
+    {
+        return weapon.knockback;
+    }
 }

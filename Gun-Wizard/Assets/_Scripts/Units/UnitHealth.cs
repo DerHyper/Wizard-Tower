@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 {
     [SerializeField]
     private Unit unit;
+    [SerializeField]
+    private float timeout;
+    private bool isInTimeout = false;
     private int maxHealth;
     private int currenHealth;
     Logger logger;
@@ -24,6 +28,11 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 
     public void DamageHealth(int amount)
     {
+        if (isInTimeout)
+        {
+            return;
+        }
+        
         logger.Log("Unit '"+this.name+"' , "+currenHealth+", -"+amount, this);
         if (currenHealth-amount > 0)
         {
@@ -34,6 +43,20 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
             currenHealth = 0;
             Die();
         }
+
+        StartTimeout();
+    }
+
+    private void StartTimeout()
+    {
+        isInTimeout = true;
+        logger.Log(name+" is in Timeout.",this);
+        Invoke("StopTimeout", timeout);
+    }
+
+    private void StopTimeout()
+    {
+        isInTimeout = false;
     }
 
     public virtual void Die()

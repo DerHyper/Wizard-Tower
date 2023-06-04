@@ -25,9 +25,15 @@ public class GunBullet : IBullet
 
     private void OnTriggerEnter2D(Collider2D other) {
 
-        other.GetComponent<EnemieHealth>()?.DamageHealth(gun.GetDamage());
-        logger.Log("Damage on'"+other.name+"'.", this);
-
-        Destroy(gameObject);
+        if (other.tag == "Enemy")
+        {
+            other.GetComponent<EnemieHealth>()?.DamageHealth(gun.GetDamage());
+            logger.Log("Damage on'"+other.name+"'.", this);
+            Destroy(gameObject);
+        }
+        else if (other.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }

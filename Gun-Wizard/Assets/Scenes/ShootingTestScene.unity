@@ -260,6 +260,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Shooting Input
       m_Flags: 8
+    - m_Name: 
+      m_Id: 7432c13a-945f-4ea4-a625-295027bc5fc6
+      m_Path: <Mouse>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shooting Input
+      m_Flags: 0
     m_Flags: 0
 --- !u!114 &340204329
 MonoBehaviour:
@@ -327,7 +335,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2861508000259758024, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
   m_PrefabInstance: {fileID: 2861508000451049661}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &364474241
+--- !u!114 &364474248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,10 +344,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 151467182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4053d9aef0a8f7041ac39e244f2a1a97, type: 3}
+  m_Script: {fileID: 11500000, guid: 166fd629a9dd81f43bbb4013acdfb514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: f6f27c7ffb20c974998252986788e8ae, type: 2}
+  weapon: {fileID: 11400000, guid: 3a7c58c6c23364444ba6ab0378d28b04, type: 2}
 --- !u!1 &452244125
 GameObject:
   m_ObjectHideFlags: 0

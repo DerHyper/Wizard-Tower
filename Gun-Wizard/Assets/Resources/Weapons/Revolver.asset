@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Revolver
   description: A simple pistol. Why did you bring that with you?
   sprite: {fileID: -1874529682, guid: f61c5042f93162740827160c797774bb, type: 3}
-  damage: 20
-  knockback: 2
+  damage: 5
+  knockback: 3
   bulletsprite: {fileID: -1646989380, guid: f61c5042f93162740827160c797774bb, type: 3}
   bulletSpeed: 20
   shootingSpeed: 2
