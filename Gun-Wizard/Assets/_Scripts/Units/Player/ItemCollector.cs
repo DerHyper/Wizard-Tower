@@ -7,11 +7,11 @@ using TMPro;
 public class ItemCollector : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText;
-    private int coins = 0;
+    private int coins = 300;
 
     void Start() 
     {
-        
+        UpdateText();
     }
 
 
@@ -33,6 +33,16 @@ public class ItemCollector : MonoBehaviour
     public int getCoins()
     {
         return coins;
+    }
+
+    public void setCoins(int amount)
+    {
+        coins -= amount;
+    }
+
+    public void UpdateText()
+    {
+        coinText.text = "Coins: " + coins;
     }
     
 }
