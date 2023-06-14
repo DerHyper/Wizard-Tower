@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public Canvas DeathMenu;
+
     public MenuManager Instance;
 
     Logger logger;
@@ -68,6 +69,11 @@ public class MenuManager : MonoBehaviour
     public void LoadMainMenueScene()
     {
         LevelManager.Instance.LoadMainMenueScene();
+    }
+
+    public void LoadShopMenueScene()
+    {
+        LevelManager.Instance.LoadShopScene();
     }
 
     public void QuitGame()
