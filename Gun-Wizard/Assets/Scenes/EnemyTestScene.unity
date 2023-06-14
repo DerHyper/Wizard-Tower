@@ -950,6 +950,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2861508000259758020, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
+      propertyPath: moveSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2861508000259758024, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1001,6 +1005,10 @@ PrefabInstance:
     - target: {fileID: 2861508000259758026, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861508000259758026, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2861508000259758026, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
       propertyPath: m_UseAutoMass
