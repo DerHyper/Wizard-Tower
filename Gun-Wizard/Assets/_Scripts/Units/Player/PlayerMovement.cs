@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public InputAction inputAction;
 
-    //stores Player movement
-    Vector2 movement;
-
     private bool isPlaying;
 
     private void Awake() {
@@ -45,8 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void LetPlayerMove()
     {
-        movement = inputAction.ReadValue<Vector2>();
+        Vector2 movement = inputAction.ReadValue<Vector2>();
         //moves the rigid body to a new position and collides if sth is in the way
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //rb.velocity = movement*moveSpeed*Time.fixedDeltaTime*50;
+        rb.position = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

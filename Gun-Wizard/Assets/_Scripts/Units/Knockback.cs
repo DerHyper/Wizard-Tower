@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    private float GetKnockback(GameObject sender)
+    float KnockbackTime = 0.15f; 
+    GameState oldState;
+    public void Push(GameObject sender, float knockback)
     {
-        float knockback = sender.GetComponent<MeleeWeaponDisplay>().GetKnockback();
-        return knockback;
-    }
-    public void Push(GameObject sender)
-    {
-        float knockback = GetKnockback(sender);
+        Debug.Log("Push Player by " + knockback);
         Vector2 forceDirection = (transform.position - sender.transform.position).normalized;
         GetComponent<Rigidbody2D>().AddForce(forceDirection*knockback*100, ForceMode2D.Force);
+        Invoke("StopKnockback", KnockbackTime);
+    }
+
+    private void StopKnockback()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 }

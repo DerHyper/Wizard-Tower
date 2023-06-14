@@ -12,6 +12,7 @@ public class MeleeWeaponDisplay: MonoBehaviour, WeaponDisplay
     private void Start() 
     {
         SetSprite();
+        GetComponent<EnemyMeleeAttack>().knockback = weapon.knockback;
     }
 
     public void SetSprite()
