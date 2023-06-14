@@ -32,6 +32,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void LoadShopScene()
+    {
+        logger.Log("Load Shop Menue.", this);
+        SceneManager.LoadScene(2);
+    }
+
     public void LoadNextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
