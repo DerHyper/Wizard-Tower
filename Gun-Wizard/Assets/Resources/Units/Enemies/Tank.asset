@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66a02b1c37be5ef4da76354990dc0b5f, type: 3}
-  m_Name: TestEnemie
+  m_Name: Tank
   m_EditorClassIdentifier: 
-  name: TestEnemie
-  description: Just a Test one
+  name: Tank
+  description: Be wary of this hefty chonk.
   artwork: {fileID: 21300000, guid: 17fa84703485d314b8d6b5216987d4b1, type: 3}
   movementSpeed: 5
   maxHealth: 30
+  weapon: {fileID: 0}

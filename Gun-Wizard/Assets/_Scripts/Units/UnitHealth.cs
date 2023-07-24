@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class UnitHealth : MonoBehaviour, IUnitHealth
 {
-    [SerializeField]
     private Unit unit;
     [SerializeField]
     private float timeout;
@@ -15,8 +14,12 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     Logger logger;
 
     public void Start() {
-        SetHealthToUnitStandart();
         logger = Finder.FindLogger();
+    }
+
+    public void SetUnit(Unit unit) {
+        this.unit = unit;
+        SetHealthToUnitStandart();
     }
 
     // Sets all stats to the SO standart

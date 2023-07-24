@@ -10,4 +10,5 @@ public class Unit : ScriptableObject
     public Sprite artwork;
     public float movementSpeed;
     public int maxHealth;
+    public Weapon weapon;
 }
