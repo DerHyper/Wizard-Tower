@@ -11,6 +11,21 @@ public class WeaponRotationEnemy : MonoBehaviour
     private SpriteRenderer EnemySprite;
     private SpriteRenderer weaponSprite;
     private GameObject Player;
+    private EnemyAI enemyAI;
+    private bool isHunting;
+
+    private void Awake() {
+        enemyAI = GetComponentInParent<EnemyAI>();
+        enemyAI.OnEnemyStateChanged += EnemyAIOnGameStateChanged;
+    }
+
+    private void OnDestroy() {
+        enemyAI.OnEnemyStateChanged -= EnemyAIOnGameStateChanged;
+    }
+
+    private void EnemyAIOnGameStateChanged(EnemyState state) {
+        isHunting = (state == EnemyState.Hunt);
+    }
 
     private void Start() 
     {
@@ -23,7 +38,10 @@ public class WeaponRotationEnemy : MonoBehaviour
 
     void Update()
     {
-        LookAtPlayer();
+        if (isHunting)
+        {
+            LookAtPlayer();
+        }
     }
 
     private void LookAtPlayer()
