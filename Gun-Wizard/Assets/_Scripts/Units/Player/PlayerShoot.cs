@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
     GameObject bullet;
 
     public InputManager inputManager;
-    private RangedWeaponDisplay weaponDisplay;
+    private WeaponDisplay weaponDisplay;
     private WeaponRotation weaponParent;
     private float shootingInterval;
     private float timeSinceLastShoot;
@@ -75,6 +75,7 @@ public class PlayerShoot : MonoBehaviour
     {
         timeSinceLastShoot += Time.fixedDeltaTime;
         bool canShootAgain = timeSinceLastShoot >= shootingInterval;
+        logger.Log(shootingInterval, this);
         return isPlaying && inputManager.ShootButtonPressed() && canShootAgain;
     }
 }

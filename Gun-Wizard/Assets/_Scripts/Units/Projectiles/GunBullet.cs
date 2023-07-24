@@ -6,7 +6,7 @@ public class GunBullet : IBullet
 {
     int damage;
     int speed;
-    RangedWeaponDisplay gun;
+    WeaponDisplay gun;
     Rigidbody2D rb;
     Logger logger;
     

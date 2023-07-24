@@ -17,6 +17,7 @@ MonoBehaviour:
   sprite: {fileID: -1874529682, guid: f61c5042f93162740827160c797774bb, type: 3}
   damage: 5
   knockback: 3
+  attackSpeed: 6
+  weapontype: 1
   bulletsprite: {fileID: -1646989380, guid: f61c5042f93162740827160c797774bb, type: 3}
   bulletSpeed: 20
-  shootingSpeed: 2

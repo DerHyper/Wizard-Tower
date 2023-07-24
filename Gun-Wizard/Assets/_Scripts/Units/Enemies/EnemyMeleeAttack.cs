@@ -11,7 +11,9 @@ public class EnemyMeleeAttack : MonoBehaviour
     private bool isSwinging = false;
     
     private void Start() {
-        damage = GetComponent<MeleeWeaponDisplay>().GetDamage();
+        WeaponDisplay weaponDisplay = GetComponent<WeaponDisplay>();
+        damage = weaponDisplay.GetDamage();
+        knockback = weaponDisplay.GetKnockback();
     }
 
     private void OnTriggerStay2D(Collider2D other) {

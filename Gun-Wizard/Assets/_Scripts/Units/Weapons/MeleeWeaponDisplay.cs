@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeaponDisplay: MonoBehaviour, WeaponDisplay
+[Obsolete("This was exchanged for a general Weapon-Display", true)]
+public class MeleeWeaponDisplay: MonoBehaviour
 {
 
     [SerializeField]

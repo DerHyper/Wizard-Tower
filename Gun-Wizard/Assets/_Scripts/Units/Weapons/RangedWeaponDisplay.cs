@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedWeaponDisplay: MonoBehaviour, WeaponDisplay
+[Obsolete("This was exchanged for a general Weapon-Display", true)]
+public class RangedWeaponDisplay: MonoBehaviour
 {
 
     [SerializeField]
@@ -28,11 +29,11 @@ public class RangedWeaponDisplay: MonoBehaviour, WeaponDisplay
     // Get ShootingSpeed in Bullets per second 
     public float GetShootingSpeed()
     {
-        return weapon.shootingSpeed;
+        return weapon.attackSpeed;
     }
 
     public float GetShootingInterval()
     {
-        return 1.0f/weapon.shootingSpeed;
+        return 1.0f/weapon.attackSpeed;
     }
 }

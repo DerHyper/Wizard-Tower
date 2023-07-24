@@ -17,16 +17,16 @@ public static class Finder
     }
 
     // Returns the current Gun from the Player. if no gun is equiped return a standart-Gun
-    public static RangedWeaponDisplay FindPlayerGun()
+    public static WeaponDisplay FindPlayerGun()
     {
         GameObject player = FindPlayer();
-        RangedWeaponDisplay rangedWeaponDisplay = player.GetComponentInChildren<RangedWeaponDisplay>();
-        if (rangedWeaponDisplay == null)
+        WeaponDisplay weaponDisplay = player.GetComponentInChildren<WeaponDisplay>();
+        if (weaponDisplay == null)
         {
             Debug.Log("Could not find GunDisplay");
             throw new MissingComponentException(); 
         }
-        return rangedWeaponDisplay;
+        return weaponDisplay;
     }
 
     // Returns the current Inputmanager or creates a new one.

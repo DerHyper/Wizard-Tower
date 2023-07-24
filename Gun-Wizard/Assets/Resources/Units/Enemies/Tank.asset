@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tank
   description: Be wary of this hefty chonk.
-  artwork: {fileID: 21300000, guid: 17fa84703485d314b8d6b5216987d4b1, type: 3}
+  artwork: {fileID: -1253965509, guid: 9299b029f9cb3484ab7f77569239a9c4, type: 3}
   movementSpeed: 5
   maxHealth: 30
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: b8edfbf9ef4478f47b4a86dc813e7cd2, type: 2}
