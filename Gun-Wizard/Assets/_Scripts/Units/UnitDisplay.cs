@@ -11,5 +11,10 @@ public class UnitDisplay : MonoBehaviour
     {
         GetComponent<UnitHealth>().SetUnit(unit);
         GetComponent<SpriteRenderer>().sprite = unit.artwork;
+        GetComponentInChildren<WeaponDisplay>().SetWeapon(unit.weapon);
+    }
+
+    public float GetMovementSpeed() {
+        return unit.movementSpeed;
     }
 }

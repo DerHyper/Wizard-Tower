@@ -10,10 +10,10 @@ public class WeaponDisplay : MonoBehaviour
 
     private void Start() 
     {
-        SetSprite();
+        UpdateSprite();
     }
 
-    public void SetSprite()
+    private void UpdateSprite()
     {
         GetComponent<SpriteRenderer>().sprite = weapon.sprite;
     }
@@ -45,4 +45,8 @@ public class WeaponDisplay : MonoBehaviour
         return 1.0f/weapon.attackSpeed;
     }
 
+    public void SetWeapon(Weapon weapon) {
+        this.weapon = weapon;
+        UpdateSprite();
+    }
 }
