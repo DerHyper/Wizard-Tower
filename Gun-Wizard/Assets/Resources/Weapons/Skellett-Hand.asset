@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0c116060634064a92e943d643be3b8, type: 3}
-  m_Name: Knife
+  m_Script: {fileID: 11500000, guid: ed5998cc7db2cd0419f026806190b1be, type: 3}
+  m_Name: Skellett-Hand
   m_EditorClassIdentifier: 
-  name: Knife
-  description: 
-  sprite: {fileID: 995021016, guid: ea4568972904e3548b095709827c4839, type: 3}
-  damage: 10
-  knockback: 5
-  attackSpeed: 2
+  name: Skellett-Hand
+  description: Nothing but bare Hands
+  sprite: {fileID: -2124795077, guid: 4339e8ae88a823a4badf6dbaaa16f757, type: 3}
+  damage: 2
+  knockback: 10
+  attackSpeed: 10
   weapontype: 0
   bulletsprite: {fileID: 0}
   bulletSpeed: 0
