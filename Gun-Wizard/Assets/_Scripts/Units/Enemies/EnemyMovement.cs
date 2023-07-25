@@ -6,11 +6,12 @@ public class EnemyMovement : MonoBehaviour
 {
     private EnemyAI enemyAI;
     private bool isHunting;
+    private float movementSpeed;
     Rigidbody2D rb;
     GameObject player;
 
     private void Awake() {
-        enemyAI = GetComponentInParent<EnemyAI>();
+        enemyAI = GetComponent<EnemyAI>();
         enemyAI.OnEnemyStateChanged += EnemyAIOnGameStateChanged;
     }
 
@@ -27,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = Finder.FindPlayer();
+        movementSpeed = GetComponent<UnitDisplay>().GetMovementSpeed();
     }
 
     // Update is called once per frame
@@ -35,7 +37,8 @@ public class EnemyMovement : MonoBehaviour
         if (isHunting)
         {
             Vector2 direction = (player.transform.position -transform.position).normalized;
-            rb.position = rb.position + direction*Time.deltaTime;
+            Vector2 frameMoveAmount = direction * Time.deltaTime * movementSpeed;
+            rb.position = rb.position + frameMoveAmount;
         }
     }
 }

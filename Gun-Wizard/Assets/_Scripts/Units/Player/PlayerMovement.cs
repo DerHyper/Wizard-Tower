@@ -6,13 +6,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    private float moveSpeed = 5f;
 
     //acts as the  motor to move the player
     public Rigidbody2D rb;
     public InputAction inputAction;
 
     private bool isPlaying;
+
+    private void Start() {
+        moveSpeed = GetComponent<UnitDisplay>().GetMovementSpeed();
+    }
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
