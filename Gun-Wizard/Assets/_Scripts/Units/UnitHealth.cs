@@ -7,7 +7,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 {
     private Unit unit;
     [SerializeField]
-    private float timeout;
+    private float invincibleTimeout;
     private bool isInTimeout = false;
     private int maxHealth;
     private int currenHealth;
@@ -54,7 +54,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     {
         isInTimeout = true;
         logger.Log(name+" is in Timeout.",this);
-        Invoke("StopTimeout", timeout);
+        Invoke("StopTimeout", invincibleTimeout);
     }
 
     private void StopTimeout()
