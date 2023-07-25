@@ -6,7 +6,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 {
     private int damage;
     public int knockback {set; get;}
-    private float swingingTime = 0.5f;
+    private float attackInterval = 0.5f;
     private bool playerInRange = false;
     private bool isSwinging = false;
     
@@ -14,6 +14,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         WeaponDisplay weaponDisplay = GetComponent<WeaponDisplay>();
         damage = weaponDisplay.GetDamage();
         knockback = weaponDisplay.GetKnockback();
+        attackInterval = weaponDisplay.GetAttackInterval();
     }
 
     private void OnTriggerStay2D(Collider2D other) {
@@ -24,7 +25,7 @@ public class EnemyMeleeAttack : MonoBehaviour
             {
                 //Start swinging here
                 isSwinging = true;
-                Invoke("TryHitPlayer", swingingTime);  
+                Invoke("TryHitPlayer", attackInterval);  
             }
         }
     }

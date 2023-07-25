@@ -40,7 +40,7 @@ public class WeaponDisplay : MonoBehaviour
         return weapon.attackSpeed;
     }
 
-    public float GetShootingInterval()
+    public float GetAttackInterval()
     {
         return 1.0f/weapon.attackSpeed;
     }

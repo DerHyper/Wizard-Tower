@@ -52,7 +52,7 @@ public class PlayerShoot : MonoBehaviour
     private void UpdateInstances()
     {
         weaponDisplay = Finder.FindPlayerGun();
-        shootingInterval = weaponDisplay.GetShootingInterval();
+        shootingInterval = weaponDisplay.GetAttackInterval();
         inputManager = Finder.FindInputManager();
         logger = Finder.FindLogger();
         weaponParent = GetComponentInChildren<WeaponRotation>();

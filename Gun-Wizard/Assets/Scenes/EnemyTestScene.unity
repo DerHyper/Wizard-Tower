@@ -1384,7 +1384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1711400682263638513, guid: 6487d3723f15f2d41911b1861b568b05, type: 3}
       propertyPath: m_Name
-      value: Test Enemy
+      value: Tank
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1659305686, guid: 6487d3723f15f2d41911b1861b568b05, type: 3}
@@ -1869,7 +1869,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1739953944
 MonoBehaviour:
   m_ObjectHideFlags: 0
