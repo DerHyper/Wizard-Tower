@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Nothing but bare Hands
   sprite: {fileID: -2124795077, guid: 4339e8ae88a823a4badf6dbaaa16f757, type: 3}
   damage: 2
-  knockback: 10
+  knockback: 20
   attackSpeed: 10
   weapontype: 0
   bulletsprite: {fileID: 0}
