@@ -11,4 +11,5 @@ public class Unit : ScriptableObject
     public float movementSpeed;
     public int maxHealth;
     public Weapon weapon;
+    public int amountOfMoney;
 }
