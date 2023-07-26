@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1194985683}
   - component: {fileID: 1194985684}
   - component: {fileID: 1194985685}
+  - component: {fileID: 1194985686}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2236e0b951c9db45b3183b645e921b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   rb: {fileID: 2861508000259758026}
   inputAction:
     m_Name: Input
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75112baa80777484ea6d781e88939874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 1
+  invincibleTimeout: 0
 --- !u!70 &1194985683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.07207662}
@@ -383,6 +383,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 7c9332ca63aa7334eacc44fa76032095, type: 2}
+--- !u!70 &1194985686
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861508000259758025}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0049973982, y: -0.7917284}
+  m_Size: {x: 1.0632272, y: 0.4486249}
+  m_Direction: 1
 --- !u!1 &2861508001197340034
 GameObject:
   m_ObjectHideFlags: 0
