@@ -37,7 +37,7 @@ public class ShopManagerScript : MonoBehaviour
 
         if (itemCollector.getCoins() >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
-            itemCollector.setCoins(shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]); //ausgegebenen Betrag abziehen
+            itemCollector.substractCoins(shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]); //ausgegebenen Betrag abziehen
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++; //Anzahl Items im Inventar erhöhen
             itemCollector.UpdateText(); //Anzhal Coins Text updaten
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString(); //Anzahl gekaufte Items updaten

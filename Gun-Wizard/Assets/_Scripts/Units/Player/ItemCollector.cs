@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
             if (other.GetComponent<MoneyDisplay>() != null)
             {
                 coins += other.GetComponent<MoneyDisplay>().GetValue();
-                coinText.text = "Coins: " + coins;
+                UpdateText();
             }
             Destroy(other); 
         }
@@ -35,7 +35,7 @@ public class ItemCollector : MonoBehaviour
         return coins;
     }
 
-    public void setCoins(int amount)
+    public void substractCoins(int amount)
     {
         coins -= amount;
     }

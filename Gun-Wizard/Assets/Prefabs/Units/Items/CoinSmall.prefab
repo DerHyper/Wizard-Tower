@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8983321015882851068}
   - component: {fileID: 8983321015882851042}
   - component: {fileID: 8983321015882851043}
-  - component: {fileID: 8983321016340147133}
+  - component: {fileID: 449676712}
   m_Layer: 0
   m_Name: CoinSmall
   m_TagString: Coin
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8983321015882851071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 244, y: -144, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8983321016340147133
+--- !u!114 &449676712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8983321015882851071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db13df77897c6a840a35bce31e13ce09, type: 3}
+  m_Script: {fileID: 11500000, guid: 0287955bbc3094744af1d3a2a9b3af4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  money: {fileID: 11400000, guid: 127284b9f419fd6458bae4ddf83d6cff, type: 2}

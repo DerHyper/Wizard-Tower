@@ -8,6 +8,8 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private Unit unit;
     [SerializeField]
     private float invincibleTimeout;
+    [SerializeField]
+    GameObject money;
     private bool isInTimeout = false;
     private int maxHealth;
     private int currenHealth;
@@ -64,9 +66,19 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 
     public virtual void Die()
     {
+        
+        GameObject coin = Instantiate(
+            money, 
+            this.transform.position, 
+            this.transform.rotation
+        );
+        logger.Log("Spawned Coin", coin);
+
         logger.Log("Unit '"+this.name+"' dead.", this);
         Destroy(gameObject);
     }
+
+    
 
     public void HealHealth(int amount)
     {

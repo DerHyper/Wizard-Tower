@@ -75,7 +75,6 @@ public class PlayerShoot : MonoBehaviour
     {
         timeSinceLastShoot += Time.fixedDeltaTime;
         bool canShootAgain = timeSinceLastShoot >= shootingInterval;
-        logger.Log(shootingInterval, this);
         return isPlaying && inputManager.ShootButtonPressed() && canShootAgain;
     }
 }
