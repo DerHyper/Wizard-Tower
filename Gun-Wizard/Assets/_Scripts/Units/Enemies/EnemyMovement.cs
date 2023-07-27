@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private EnemyAI enemyAI;
-    private bool isHunting;
+    EnemyState state;
     private float movementSpeed;
     Rigidbody2D rb;
     GameObject player;
@@ -20,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void EnemyAIOnGameStateChanged(EnemyState state) {
-        isHunting = (state == EnemyState.Hunt);
+        this.state = state;
     }
 
     // Start is called before the first frame update
@@ -34,11 +35,31 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHunting)
+        Move();
+    }
+
+    private void Move()
+    {
+        Vector2 direction = CalculateDirection();
+        Vector2 frameMoveAmount = direction * Time.deltaTime * movementSpeed;
+        rb.position = rb.position + frameMoveAmount;
+    }
+
+    private Vector2 CalculateDirection()
+    {
+        switch (state)
         {
-            Vector2 direction = (player.transform.position -transform.position).normalized;
-            Vector2 frameMoveAmount = direction * Time.deltaTime * movementSpeed;
-            rb.position = rb.position + frameMoveAmount;
+            case EnemyState.Idle: return new Vector2();
+            case EnemyState.Hunt: return PlayerDirection();
+            case EnemyState.Flee: return -PlayerDirection();
+            case EnemyState.Stay: return new Vector2();
+            default: throw new ArgumentOutOfRangeException(nameof(state));
         }
+    }
+
+    private Vector2 PlayerDirection()
+    {
+        Vector2 direction = (player.transform.position -transform.position).normalized;
+        return direction;
     }
 }

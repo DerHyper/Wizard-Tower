@@ -360,7 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ed250cf101a1044afcf3251caeb32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  huntingRadius: 15
+  huntRadius: 20
+  stayRadius: 0
+  fleeRadius: 0
 --- !u!114 &3168906233261115258
 MonoBehaviour:
   m_ObjectHideFlags: 0
