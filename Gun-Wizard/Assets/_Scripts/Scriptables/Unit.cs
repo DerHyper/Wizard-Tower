@@ -12,4 +12,11 @@ public class Unit : ScriptableObject
     public int maxHealth;
     public Weapon weapon;
     public int amountOfMoney;
+    public MovementBehaviour behaviour = MovementBehaviour.Aggressive; 
+}
+
+public enum MovementBehaviour {
+    Player,
+    Aggressive,
+    Distancing
 }

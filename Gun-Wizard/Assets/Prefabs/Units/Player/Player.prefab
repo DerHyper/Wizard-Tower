@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibleTimeout: 0
+  money: {fileID: 0}
 --- !u!70 &1194985683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
