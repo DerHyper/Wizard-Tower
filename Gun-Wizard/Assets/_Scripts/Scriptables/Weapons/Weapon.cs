@@ -12,7 +12,6 @@ public class Weapon : ScriptableObject
     public int damage;
     [Range(0,100)]
     public int knockback;
-
     // Time between attacks
     [Range(0.1f,100)]
     public float attackSpeed;
@@ -21,6 +20,7 @@ public class Weapon : ScriptableObject
     public Sprite bulletsprite;
     [Range(0.1f,100)]
     public float bulletSpeed;
+    public GameObject bullet;
     
 }
 

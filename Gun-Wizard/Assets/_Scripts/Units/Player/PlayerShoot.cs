@@ -12,9 +12,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     Logger logger;
     
-    [SerializeField]
-    GameObject bullet;
-
+    private GameObject bullet;
     public InputManager inputManager;
     private WeaponDisplay weaponDisplay;
     private WeaponRotation weaponParent;
@@ -56,6 +54,7 @@ public class PlayerShoot : MonoBehaviour
         inputManager = Finder.FindInputManager();
         logger = Finder.FindLogger();
         weaponParent = GetComponentInChildren<WeaponRotation>();
+        bullet = weaponDisplay.GetBullet();
     }
 
     // Spawns a Bullet with the attributes of the Gun equipped.

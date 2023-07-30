@@ -49,4 +49,9 @@ public class WeaponDisplay : MonoBehaviour
         this.weapon = weapon;
         UpdateSprite();
     }
+
+    public GameObject GetBullet()
+    {
+        return weapon.bullet;
+    }
 }
