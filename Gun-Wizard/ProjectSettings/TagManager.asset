@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Event
   - Weapon
+  - Obstacle
+  - Wall
   layers:
   - Default
   - TransparentFX
