@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GunBullet : IBullet
 {
+    [HideInInspector]
     public int damage;
+    [HideInInspector]
     public float speed;
-    Rigidbody2D rb;
-    Logger logger;
+    private Rigidbody2D rb;
+    private Logger logger;
     
     void Start()
     {

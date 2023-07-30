@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MagicBullet : IBullet
 {
+    [HideInInspector]
     public int damage;
+    [HideInInspector]
     public float speed;
-    Logger logger;
-    Rigidbody2D rb;
+    private Logger logger;
+    private Rigidbody2D rb;
 
     private void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
