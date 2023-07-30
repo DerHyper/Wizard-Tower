@@ -12,7 +12,8 @@ public class WeaponRotationEnemy : MonoBehaviour
     private SpriteRenderer weaponSprite;
     private GameObject Player;
     private EnemyAI enemyAI;
-    private bool isHunting;
+    private EnemyState state;
+    private HashSet<EnemyState> aimStates = new HashSet<EnemyState>() {EnemyState.Hunt, EnemyState.Flee, EnemyState.Stay};
 
     private void Awake() {
         enemyAI = GetComponentInParent<EnemyAI>();
@@ -24,7 +25,7 @@ public class WeaponRotationEnemy : MonoBehaviour
     }
 
     private void EnemyAIOnGameStateChanged(EnemyState state) {
-        isHunting = (state == EnemyState.Hunt);
+        this.state = state;
     }
 
     private void Start() 
@@ -38,7 +39,7 @@ public class WeaponRotationEnemy : MonoBehaviour
 
     void Update()
     {
-        if (isHunting)
+        if (aimStates.Contains(state))
         {
             LookAtPlayer();
         }

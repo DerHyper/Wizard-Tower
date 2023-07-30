@@ -1604,18 +1604,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minion
       objectReference: {fileID: 0}
-    - target: {fileID: 3168906233261115257, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
-      propertyPath: fleeRadius
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168906233261115257, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
-      propertyPath: huntRadius
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168906233261115257, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
-      propertyPath: stayRadius
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
 --- !u!1 &1475352400
@@ -2186,11 +2174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3610247954586335709, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.909581
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: 3610247954586335709, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.32356
+      value: 6.64
       objectReference: {fileID: 0}
     - target: {fileID: 3610247954586335709, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2227,18 +2215,6 @@ PrefabInstance:
     - target: {fileID: 3610247955638269636, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_Name
       value: Magician
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610247955638269660, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
-      propertyPath: fleeRadius
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610247955638269660, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
-      propertyPath: huntRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610247955638269660, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
-      propertyPath: stayRadius
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
