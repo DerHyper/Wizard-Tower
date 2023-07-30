@@ -62,11 +62,15 @@ public class PlayerShoot : MonoBehaviour
     {
         logger.Log("FIRE!",this);
 
-        Instantiate(
+        GunBullet gunBullet = Instantiate(
             bullet, 
             firePoint.transform.position, 
             weaponParent.transform.rotation
-        );
+        ).GetComponent<GunBullet>();
+
+        gunBullet.damage = weaponDisplay.GetDamage();
+        gunBullet.speed = weaponDisplay.GetBulletSpeed();
+
     }
     
     // returns true if Player can shoot again

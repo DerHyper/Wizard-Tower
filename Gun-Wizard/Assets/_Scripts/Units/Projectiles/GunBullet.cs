@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class GunBullet : IBullet
 {
-    int damage;
-    int speed;
-    WeaponDisplay gun;
+    public int damage;
+    public float speed;
     Rigidbody2D rb;
     Logger logger;
     
     void Start()
     {
         UpdateInstances();
+        rb.velocity = transform.right * speed;
     }
 
     private void UpdateInstances() 
     {
-        gun = Finder.FindPlayerGun();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * gun.GetBulletSpeed();
         logger = Finder.FindLogger();
     }
 
@@ -27,7 +25,7 @@ public class GunBullet : IBullet
 
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemieHealth>()?.DamageHealth(gun.GetDamage());
+            other.GetComponent<EnemieHealth>()?.DamageHealth(damage);
             logger.Log("Damage on'"+other.name+"'.", this);
             Destroy(gameObject);
         }
