@@ -11,8 +11,18 @@ public class EnemyMeleeAttack : MonoBehaviour
     private bool playerInRange = false;
     private bool isSwinging = false;
 
+    void Start()
+    {
+        StartCoroutine(LateStart(1));
+    }
+
+    IEnumerator LateStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        UpdateWeapon(); // Needs to be loaded after Weapon Display
+    }
+
     private void OnTriggerStay2D(Collider2D other) {
-        UpdateWeapon();
         if (other.tag == "Player")
         {
             playerInRange = true;
