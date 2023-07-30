@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 3610247955638269663}
   - component: {fileID: 3610247955638269649}
   - component: {fileID: 1864518896918871152}
+  - component: {fileID: 3075764089509092773}
   m_Layer: 0
   m_Name: Magician
   m_TagString: Enemy
@@ -276,6 +277,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0049973982, y: -0.7917284}
   m_Size: {x: 1.0632272, y: 0.4486249}
   m_Direction: 1
+--- !u!114 &3075764089509092773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610247955638269636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045dd04c31b9b794ca2af165b36da1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 3610247955458359652}
+  speed: 0
 --- !u!1 &3610247956452987540
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +302,6 @@ GameObject:
   - component: {fileID: 3610247956452987565}
   - component: {fileID: 3610247956452987566}
   - component: {fileID: 3610247956452987567}
-  - component: {fileID: 3610247956452987564}
   - component: {fileID: 3610247956452987562}
   m_Layer: 0
   m_Name: Weapon
@@ -379,18 +393,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.84375
---- !u!114 &3610247956452987564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3610247956452987540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 216cddb4d7e16ad4e811fdf323967d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3610247956452987562
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2861508001197340157}
   logger: {fileID: 0}
-  bullet: {fileID: 8142486258118601797, guid: 51091665cbefa0d41a94b581ab1384c8, type: 3}
   inputManager: {fileID: 0}
 --- !u!114 &2861508000259758020
 MonoBehaviour:
