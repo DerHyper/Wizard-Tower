@@ -60,7 +60,7 @@ public class PlayerShoot : MonoBehaviour
     // Spawns a Bullet with the attributes of the Gun equipped.
     private void ShootBullet()
     {
-        logger.Log("FIRE!",this);
+        //logger.Log("FIRE!",this);
 
         GunBullet gunBullet = Instantiate(
             bullet, 
