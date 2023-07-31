@@ -38,7 +38,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
             return;
         }
         
-        logger.Log("Unit '"+this.name+"' , "+currenHealth+", -"+amount, this);
+        //logger.Log("Unit '"+this.name+"' , "+currenHealth+", -"+amount, this);
         if (currenHealth-amount > 0)
         {
             currenHealth -= amount;
@@ -55,7 +55,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private void StartTimeout()
     {
         isInTimeout = true;
-        logger.Log(name+" is in Timeout.",this);
+        //logger.Log(name+" is in Timeout.",this);
         Invoke("StopTimeout", invincibleTimeout);
     }
 
@@ -66,7 +66,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 
     public virtual void Die()
     {
-        dropManager.DropMoney(10, this.transform.position, this.transform.rotation);
+        dropManager.DropMoney(unit.amountOfMoney, this.transform.position, this.transform.rotation);
         logger.Log("Unit '"+this.name+"' dead.", this);
         Destroy(gameObject);
     }

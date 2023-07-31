@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Emerald
   m_EditorClassIdentifier: 
   <value>k__BackingField: 10
+  visual: {fileID: 1952772001, guid: f61c5042f93162740827160c797774bb, type: 3}

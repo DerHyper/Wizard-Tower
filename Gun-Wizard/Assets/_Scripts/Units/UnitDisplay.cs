@@ -17,4 +17,8 @@ public class UnitDisplay : MonoBehaviour
     public float GetMovementSpeed() {
         return unit.movementSpeed;
     }
+
+    public int getDropAmount() {
+        return unit.amountOfMoney;
+    }
 }

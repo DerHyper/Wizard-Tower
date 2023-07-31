@@ -18,5 +18,5 @@ MonoBehaviour:
   movementSpeed: 3
   maxHealth: 30
   weapon: {fileID: 11400000, guid: 86da4c95df2a1474ea3129f43dd44d83, type: 2}
-  amountOfMoney: 0
+  amountOfMoney: 10
   behaviour: 2

@@ -7,7 +7,7 @@ using TMPro;
 public class ItemCollector : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText;
-    private int coins = 300;
+    private int coins = 0;
 
     void Start() 
     {

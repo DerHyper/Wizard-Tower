@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SmallCoin
   m_EditorClassIdentifier: 
   <value>k__BackingField: 1
-  visual: {fileID: 567215785, guid: f61c5042f93162740827160c797774bb, type: 3}
+  visual: {fileID: -21662407, guid: f61c5042f93162740827160c797774bb, type: 3}
