@@ -11,6 +11,7 @@ public class ItemCollector : MonoBehaviour
 
     void Start() 
     {
+        coins = DontDestroy.Instance.money;
         UpdateText();
     }
 
@@ -25,6 +26,7 @@ public class ItemCollector : MonoBehaviour
             {
                 coins += other.GetComponent<MoneyDisplay>().GetValue();
                 UpdateText();
+                DontDestroy.Instance.money = coins;
             }
             Destroy(other); 
         }
