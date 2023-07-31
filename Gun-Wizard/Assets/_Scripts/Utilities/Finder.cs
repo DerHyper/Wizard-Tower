@@ -51,4 +51,15 @@ public static class Finder
         }
         return player;
     }
+
+    public static DropManager FindDropManager()
+    {
+        DropManager dropManager = GameObject.FindObjectOfType<DropManager>();;
+        if (dropManager == null)
+        {
+            GameObject go = Object.Instantiate(new GameObject());
+            return go.AddComponent<DropManager>();
+        }
+        return dropManager;
+    }
 }

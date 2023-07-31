@@ -8,15 +8,15 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private Unit unit;
     [SerializeField]
     private float invincibleTimeout;
-    [SerializeField]
-    GameObject money;
     private bool isInTimeout = false;
     private int maxHealth;
     private int currenHealth;
     Logger logger;
+    DropManager dropManager;
 
     public void Start() {
         logger = Finder.FindLogger();
+        dropManager = Finder.FindDropManager();
     }
 
     public void SetUnit(Unit unit) {
@@ -66,14 +66,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
 
     public virtual void Die()
     {
-        
-        GameObject coin = Instantiate(
-            money, 
-            this.transform.position, 
-            this.transform.rotation
-        );
-        logger.Log("Spawned Coin", coin);
-
+        dropManager.DropMoney(10, this.transform.position, this.transform.rotation);
         logger.Log("Unit '"+this.name+"' dead.", this);
         Destroy(gameObject);
     }
