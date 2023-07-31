@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BigCoin
   m_EditorClassIdentifier: 
   <value>k__BackingField: 5
-  visual: {fileID: 435084752, guid: f61c5042f93162740827160c797774bb, type: 3}
+  visual: {fileID: 567215785, guid: f61c5042f93162740827160c797774bb, type: 3}

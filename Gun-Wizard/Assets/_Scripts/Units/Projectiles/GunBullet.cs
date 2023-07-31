@@ -28,7 +28,7 @@ public class GunBullet : IBullet
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemieHealth>()?.DamageHealth(damage);
-            logger.Log("Damage on'"+other.name+"'.", this);
+            //logger.Log("Damage on'"+other.name+"'.", this);
             Destroy(gameObject);
         }
         else if (other.tag == "Wall")

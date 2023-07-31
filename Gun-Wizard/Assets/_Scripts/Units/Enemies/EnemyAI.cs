@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
 
     public void UpdateEnemyState(EnemyState newState) {
         State = newState;
-        logger?.Log($"Enemy is now in {newState}-State", this);
+        //logger?.Log($"Enemy is now in {newState}-State", this);
         switch (newState)
         {
             case EnemyState.Idle:

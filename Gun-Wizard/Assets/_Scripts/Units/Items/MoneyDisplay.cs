@@ -6,9 +6,10 @@ public class MoneyDisplay : MonoBehaviour
 {
     [field: SerializeField]
     Money money;
+
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().sprite = money.visual;
     }
 
     public int GetValue()

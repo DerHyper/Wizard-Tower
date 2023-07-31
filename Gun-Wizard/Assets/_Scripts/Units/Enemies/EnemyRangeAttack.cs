@@ -56,7 +56,7 @@ public class EnemyRangeAttack : MonoBehaviour
 
     private void ShootBullet()
     {
-        Debug.Log("Enemy shoots" + bullet);
+        //Debug.Log("Enemy shoots" + bullet);
         MagicBullet magicBullet = Instantiate(
             bullet, 
             firePoint.transform.position, 
@@ -71,7 +71,7 @@ public class EnemyRangeAttack : MonoBehaviour
     {
         timeSinceLastShoot += Time.fixedDeltaTime;
         bool canShootAgain = timeSinceLastShoot >= shootingInterval;
-        Debug.Log(aimStates.Contains(state)+ " " + canShootAgain);
+        //Debug.Log(aimStates.Contains(state)+ " " + canShootAgain);
         return aimStates.Contains(state) && canShootAgain;
     }
 
