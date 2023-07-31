@@ -42,7 +42,7 @@ public class ItemCollector : MonoBehaviour
 
     public void UpdateText()
     {
-        coinText.text = "Coins: " + coins;
+        coinText.text = coins.ToString();
     }
     
 }

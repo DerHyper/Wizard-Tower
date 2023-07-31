@@ -68,6 +68,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     {
         dropManager.DropMoney(unit.amountOfMoney, this.transform.position, this.transform.rotation);
         logger.Log("Unit '"+this.name+"' dead.", this);
+        EnemyManager.Instance.DecreaseEnemyCount();
         Destroy(gameObject);
     }
 

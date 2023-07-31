@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    public ArrayList scenes; // Does not work right now
+    private int currentLevel = 0;
+    private int maxLevel;
 
     Logger logger;
 
@@ -24,6 +27,19 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         logger = Finder.FindLogger();
+        // shuffleList(scenes);
+        // maxLevel = scenes.Count;
+    }
+
+    private void shuffleList(ArrayList scenes)
+    {
+        for (int i = 0; i < scenes.Count; i++)
+        {
+            int randomIndex = Random.Range(i,scenes.Count);
+            Scene temp = (Scene)scenes[i];
+            scenes[i] = scenes[randomIndex];
+            scenes[randomIndex] = temp;
+        }
     }
 
     public void LoadMainMenueScene()
@@ -40,9 +56,19 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextScene()
     {
+        int maxScenes = SceneManager.sceneCountInBuildSettings;
+        
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        logger.Log($"Loading next scene: {nextSceneIndex}, {SceneManager.GetSceneByBuildIndex(nextSceneIndex).name}", this);
-        SceneManager.LoadScene(nextSceneIndex);
+        if (nextSceneIndex >= maxScenes)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            logger.Log($"Loading next scene: {nextSceneIndex}, {SceneManager.GetSceneByBuildIndex(nextSceneIndex).name}", this);
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        
     }
 
     public void LoadScene(string sceneName)
@@ -56,6 +82,20 @@ public class LevelManager : MonoBehaviour
             logger.Log($"The Scene {sceneName} does not exist", this);
         }
     }
+
+    public void LoadNextRandomScene()
+    {
+        if (currentLevel > maxLevel)
+        {
+            LoadMainMenueScene();
+            // All levels played
+        }
+        Scene nextScene = (Scene)scenes[currentLevel];
+        SceneManager.LoadScene(nextScene.name);
+        currentLevel++;
+        scenes.Remove(nextScene);
+    }
+
 
     public void QuitGame()
     {

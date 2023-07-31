@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start() {
         UpdateEnemyState(EnemyState.Idle);
+        EnemyManager.Instance.IncreaseEnemyCount();
         logger = Finder.FindLogger();
     }
 
