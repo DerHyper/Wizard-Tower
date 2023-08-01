@@ -34,7 +34,6 @@ public class PlayerShoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(isPlaying);
         if (CanShoot())
         {
             timeSinceLastShoot = 0;
