@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Obstacle
   - Wall
+  - CoinLable
   layers:
   - Default
   - TransparentFX
