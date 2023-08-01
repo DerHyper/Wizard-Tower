@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     public ArrayList scenes; // Does not work right now
+    [SerializeField]
     private int currentLevel = 0;
     private int maxLevel;
 
@@ -16,8 +17,7 @@ public class LevelManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } 
+        }
         else
         {
             Destroy(gameObject);
@@ -68,7 +68,12 @@ public class LevelManager : MonoBehaviour
             logger.Log($"Loading next scene: {nextSceneIndex}, {SceneManager.GetSceneByBuildIndex(nextSceneIndex).name}", this);
             SceneManager.LoadScene(nextSceneIndex);
         }
-        
+        ResetGameManager();
+    }
+
+    private void ResetGameManager()
+    {
+        GameManager.Instance.UpdateGameState(GameState.Playing);
     }
 
     public void LoadScene(string sceneName)
@@ -81,6 +86,7 @@ public class LevelManager : MonoBehaviour
         {
             logger.Log($"The Scene {sceneName} does not exist", this);
         }
+        ResetGameManager();
     }
 
     public void LoadNextRandomScene()
@@ -94,6 +100,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(nextScene.name);
         currentLevel++;
         scenes.Remove(nextScene);
+        ResetGameManager();
     }
 
 

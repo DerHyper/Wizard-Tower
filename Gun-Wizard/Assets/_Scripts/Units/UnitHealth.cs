@@ -10,6 +10,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private float invincibleTimeout;
     private bool isInTimeout = false;
     private int maxHealth;
+    [SerializeField]
     private int currenHealth;
     Logger logger;
     DropManager dropManager;

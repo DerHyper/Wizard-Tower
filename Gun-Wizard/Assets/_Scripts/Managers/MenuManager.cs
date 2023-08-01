@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public Canvas DeathMenu;
 
-    public MenuManager Instance;
+    private MenuManager Instance;
 
     Logger logger;
 
