@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public static class Finder
@@ -61,5 +62,16 @@ public static class Finder
             return go.AddComponent<DropManager>();
         }
         return dropManager;
+    }
+
+    public static TextMeshProUGUI FindCoinLable()
+    {
+        TextMeshProUGUI lable = GameObject.FindGameObjectWithTag("CoinLable").GetComponent<TextMeshProUGUI>();
+        if (lable == null)
+        {
+            Debug.Log("Could not find Lable");
+            throw new MissingComponentException();
+        }
+        return lable;
     }
 }

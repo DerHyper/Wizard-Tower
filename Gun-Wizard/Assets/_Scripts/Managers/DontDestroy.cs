@@ -6,8 +6,6 @@ public class DontDestroy : MonoBehaviour
 {
     public static DontDestroy Instance;
 
-    public int money;
-
     private void Awake() {
         if (Instance == null)
         {

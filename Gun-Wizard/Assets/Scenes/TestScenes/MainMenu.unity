@@ -1295,6 +1295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87854e4e660756418e73e756aad8823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathMenu: {fileID: 0}
+  Instance: {fileID: 0}
 --- !u!4 &1916273559
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,7 +1429,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1916273558}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadNextScene
+        m_MethodName: LoadLevelBuildScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
