@@ -18,7 +18,7 @@ public class PlayerShoot : MonoBehaviour
     private WeaponRotation weaponParent;
     private float shootingInterval;
     private float timeSinceLastShoot;
-    private bool isPlaying;
+    private bool isPlaying = true;
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -34,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(isPlaying);
         if (CanShoot())
         {
             timeSinceLastShoot = 0;

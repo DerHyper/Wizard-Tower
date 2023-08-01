@@ -6,13 +6,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     private float moveSpeed = 5f;
 
     //acts as the  motor to move the player
     public Rigidbody2D rb;
     public InputAction inputAction;
 
-    private bool isPlaying;
+    private bool isPlaying = true;
 
     private void Start() {
         moveSpeed = GetComponent<UnitDisplay>().GetMovementSpeed();

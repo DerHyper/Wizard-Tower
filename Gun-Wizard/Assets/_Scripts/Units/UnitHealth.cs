@@ -10,6 +10,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     private float invincibleTimeout;
     private bool isInTimeout = false;
     private int maxHealth;
+    [SerializeField]
     private int currenHealth;
     Logger logger;
     DropManager dropManager;
@@ -68,6 +69,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     {
         dropManager.DropMoney(unit.amountOfMoney, this.transform.position, this.transform.rotation);
         logger.Log("Unit '"+this.name+"' dead.", this);
+        EnemyManager.Instance.DecreaseEnemyCount();
         Destroy(gameObject);
     }
 
