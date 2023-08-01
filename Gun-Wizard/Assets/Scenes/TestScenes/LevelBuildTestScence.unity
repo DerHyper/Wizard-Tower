@@ -4937,6 +4937,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1495654653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495654654}
+  - component: {fileID: 1495654655}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1495654654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495654653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1557782975}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495654655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495654653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a1ed2f83c7ffa4a94b96eb2ce720f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!1 &1557782974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,6 +5014,7 @@ Transform:
   - {fileID: 786146921}
   - {fileID: 1916273559}
   - {fileID: 1163272373}
+  - {fileID: 1495654654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5972,7 +6018,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3610247954586335709, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3610247954586335709, guid: 5ee0ba91b4baa974399aaa530ba06115, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6050,7 +6096,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathMenu: {fileID: 781087457}
-  Instance: {fileID: 0}
 --- !u!4 &1916273559
 Transform:
   m_ObjectHideFlags: 0
@@ -7605,3 +7650,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59215093fbc881c4d9c9beff80c3ca7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevel: 0
