@@ -20,5 +20,5 @@ MonoBehaviour:
   attackSpeed: 1
   weapontype: 1
   bulletsprite: {fileID: -153787344, guid: f61c5042f93162740827160c797774bb, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 7
   bullet: {fileID: 8142486258118601797, guid: 89183410ba497c94a8fdb552e3655d8a, type: 3}

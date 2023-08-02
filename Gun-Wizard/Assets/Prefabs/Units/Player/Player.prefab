@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2236e0b951c9db45b3183b645e921b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
   rb: {fileID: 2861508000259758026}
   inputAction:
     m_Name: Input
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibleTimeout: 0
-  money: {fileID: 0}
+  currenHealth: 0
 --- !u!70 &1194985683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -423,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2861508001197340034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.368, y: 0, z: 0}
+  m_LocalPosition: {x: 1.232, y: 0.088, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
