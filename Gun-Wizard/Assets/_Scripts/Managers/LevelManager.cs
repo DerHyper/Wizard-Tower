@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
     public void LoadShopScene()
     {
         logger.Log("Load Shop Menue.", this);
-        SceneManager.LoadScene("ShopTestScene");
+        SceneManager.LoadScene("Shop");
     }
 
     public void LoadNextScene()
