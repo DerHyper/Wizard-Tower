@@ -10,6 +10,7 @@ public class Weapon : ScriptableObject
     public Sprite sprite;
     [Range(0,100)]
     public int damage;
+    public float damageMultiplicator = 0;
     [Range(0,100)]
     public int knockback;
     // Time between attacks

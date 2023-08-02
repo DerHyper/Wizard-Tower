@@ -11,6 +11,7 @@ public class WeaponDisplay : MonoBehaviour
     private void Start() 
     {
         UpdateSprite();
+        weapon.damageMultiplicator = 0;
     }
 
     private void UpdateSprite()
@@ -18,7 +19,12 @@ public class WeaponDisplay : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = weapon.sprite;
     }
 
-    public int GetDamage()
+    public int GetPlayerDamage()
+    {
+        return (int) (weapon.damage + weapon.damage * weapon.damageMultiplicator);
+    }
+
+    public int GetEnemyDamage()
     {
         return weapon.damage;
     }
@@ -48,6 +54,10 @@ public class WeaponDisplay : MonoBehaviour
     public void SetWeapon(Weapon weapon) {
         this.weapon = weapon;
         UpdateSprite();
+    }
+
+    public void SetMultiplicator(float multiplicator){
+        weapon.damageMultiplicator += multiplicator;
     }
 
     public GameObject GetBullet()

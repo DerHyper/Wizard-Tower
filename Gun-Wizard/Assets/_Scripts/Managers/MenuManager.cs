@@ -85,4 +85,9 @@ public class MenuManager : MonoBehaviour
     {
         LevelManager.Instance.LoadNextScene();
     }
+
+    public void LoadLevelBuildScence()
+    {
+        LevelManager.Instance.LoadLevelBuildTestScence();
+    }
 }

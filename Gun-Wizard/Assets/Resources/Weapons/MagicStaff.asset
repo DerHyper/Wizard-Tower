@@ -16,6 +16,7 @@ MonoBehaviour:
   description: What would you do with that?
   sprite: {fileID: -2028115173, guid: 44d95cdbbc9d55c4bbd240785bdd750b, type: 3}
   damage: 5
+  damageMultiplicator: 0
   knockback: 5
   attackSpeed: 1
   weapontype: 1

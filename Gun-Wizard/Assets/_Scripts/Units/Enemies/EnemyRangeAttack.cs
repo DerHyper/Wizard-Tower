@@ -80,7 +80,7 @@ public class EnemyRangeAttack : MonoBehaviour
         WeaponDisplay weaponDisplay = GetComponentInChildren<WeaponDisplay>();
         knockback = weaponDisplay.GetKnockback();
         attackInterval = weaponDisplay.GetAttackInterval();
-        damage = weaponDisplay.GetDamage();
+        damage = weaponDisplay.GetEnemyDamage();
         bullet = weaponDisplay.GetBullet();
         speed = weaponDisplay.GetBulletSpeed();
         shootingInterval = weaponDisplay.GetAttackInterval();
