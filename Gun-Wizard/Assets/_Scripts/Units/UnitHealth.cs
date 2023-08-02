@@ -9,6 +9,7 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     [SerializeField]
     private float invincibleTimeout;
     private bool isInTimeout = false;
+    [SerializeField]
     private int maxHealth;
     [SerializeField]
     private int currenHealth;
@@ -23,6 +24,11 @@ public class UnitHealth : MonoBehaviour, IUnitHealth
     public void SetUnit(Unit unit) {
         this.unit = unit;
         SetHealthToUnitStandart();
+    }
+
+    public void IncreaseHealth(float healthMultiplicator)
+    {
+        unit.maxHealth = (int)(unit.maxHealth + unit.maxHealth * healthMultiplicator);
     }
 
     // Sets all stats to the SO standart

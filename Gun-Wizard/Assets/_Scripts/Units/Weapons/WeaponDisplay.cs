@@ -11,6 +11,7 @@ public class WeaponDisplay : MonoBehaviour
     private void Start() 
     {
         UpdateSprite();
+        weapon.damageMultiplicator = 0;
     }
 
     private void UpdateSprite()
