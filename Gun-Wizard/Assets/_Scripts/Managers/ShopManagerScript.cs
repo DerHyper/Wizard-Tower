@@ -9,10 +9,13 @@ public class ShopManagerScript : MonoBehaviour
 {
     [SerializeField]
     public int[,] shopItems = new int[4,4];
+
+    private WeaponDisplay weaponDisplay;
    
     void Start()
     {
         initArray(new int[3,3]{{1,2,3},{50,100,150},{0,0,0}});
+        weaponDisplay = Finder.FindPlayerGun();
     }
 
     private void initArray(int[,] values)
@@ -36,6 +39,7 @@ public class ShopManagerScript : MonoBehaviour
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++; //Anzahl Items im Inventar erhöhen
             MoneyManager.Instance.UpdateText(); //Anzahl Coins Text updaten
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString(); //Anzahl gekaufte Items updaten
+            weaponDisplay.SetMultiplicator(0.1f);
         }
     }
 }

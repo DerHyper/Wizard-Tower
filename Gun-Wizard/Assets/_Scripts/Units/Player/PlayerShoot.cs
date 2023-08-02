@@ -68,7 +68,7 @@ public class PlayerShoot : MonoBehaviour
             weaponParent.transform.rotation
         ).GetComponent<GunBullet>();
 
-        gunBullet.damage = weaponDisplay.GetDamage();
+        gunBullet.damage = weaponDisplay.GetPlayerDamage();
         gunBullet.speed = weaponDisplay.GetBulletSpeed();
 
     }

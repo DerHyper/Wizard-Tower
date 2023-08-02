@@ -54,6 +54,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("ShopTestScene");
     }
 
+    public void LoadLevelBuildTestScence()
+    {
+        logger.Log("Load Shop Menue.", this);
+        SceneManager.LoadScene("LevelBuildTestScence");
+    }
+
     public void LoadNextScene()
     {
         int maxScenes = SceneManager.sceneCountInBuildSettings;

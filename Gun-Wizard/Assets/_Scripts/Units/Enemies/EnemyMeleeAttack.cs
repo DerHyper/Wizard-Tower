@@ -59,7 +59,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         WeaponDisplay weaponDisplay = GetComponent<WeaponDisplay>();
         knockback = weaponDisplay.GetKnockback();
         attackInterval = weaponDisplay.GetAttackInterval();
-        damage = weaponDisplay.GetDamage();
+        damage = weaponDisplay.GetEnemyDamage();
     }
 
     private void HitPlayer()

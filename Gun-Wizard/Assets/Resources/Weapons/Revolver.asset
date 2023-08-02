@@ -16,6 +16,7 @@ MonoBehaviour:
   description: A simple pistol. Why did you bring that with you?
   sprite: {fileID: -1874529682, guid: f61c5042f93162740827160c797774bb, type: 3}
   damage: 5
+  damageMultiplicator: 0
   knockback: 3
   attackSpeed: 2
   weapontype: 1
