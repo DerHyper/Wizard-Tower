@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Minoin
   description: Minor damage but
   artwork: {fileID: 385975623, guid: afe796812ce9cf94ea06f3f0b83c0c27, type: 3}
-  movementSpeed: 5
+  movementSpeed: 7
   maxHealth: 10
   weapon: {fileID: 11400000, guid: 85c98bf982c49c042815940580ddd1b5, type: 2}
   amountOfMoney: 5

@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Tank
   description: Be wary of this hefty chonk.
   artwork: {fileID: -1253965509, guid: 9299b029f9cb3484ab7f77569239a9c4, type: 3}
-  movementSpeed: 1
-  maxHealth: 75
+  movementSpeed: 2
+  maxHealth: 40
   weapon: {fileID: 11400000, guid: b8edfbf9ef4478f47b4a86dc813e7cd2, type: 2}
   amountOfMoney: 20
   behaviour: 1
