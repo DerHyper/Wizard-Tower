@@ -49,6 +49,6 @@ public class MoneyManager : MonoBehaviour
     public void UpdateText()
     {
         TextMeshProUGUI coinText = Finder.FindCoinLable();
-        coinText.text = "Coins: " + coins;
+        coinText.text = coins.ToString();
     }
 }
