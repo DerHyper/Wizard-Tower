@@ -8,10 +8,11 @@ public class WeaponDisplay : MonoBehaviour
     [SerializeField]
     Weapon weapon;
 
+    public float damageMultiplicator = 0;
+
     private void Start() 
     {
         UpdateSprite();
-        weapon.damageMultiplicator = 0;
     }
 
     private void UpdateSprite()
@@ -21,7 +22,7 @@ public class WeaponDisplay : MonoBehaviour
 
     public int GetPlayerDamage()
     {
-        return (int) (weapon.damage + weapon.damage * weapon.damageMultiplicator);
+        return (int) (weapon.damage + weapon.damage * damageMultiplicator);
     }
 
     public int GetEnemyDamage()
@@ -57,7 +58,7 @@ public class WeaponDisplay : MonoBehaviour
     }
 
     public void SetMultiplicator(float multiplicator){
-        weapon.damageMultiplicator += multiplicator;
+        damageMultiplicator += multiplicator;
     }
 
     public GameObject GetBullet()
