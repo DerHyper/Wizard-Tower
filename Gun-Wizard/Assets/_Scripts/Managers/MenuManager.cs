@@ -5,35 +5,34 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    public Canvas DeathMenu;
-
     private MenuManager Instance;
 
     Logger logger;
 
-    private void Awake() {
+    public void Awake() {
         Instance = this;
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
-    private void OnDestroy() {
+    public void OnDestroy() {
         GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
     }
 
-    private void GameManagerOnGameStateChanged(GameState state) {
+    public void GameManagerOnGameStateChanged(GameState state) {
         if (state == GameState.PlayerDead)
         {
-            ActivateMenu(DeathMenu);
+            ActivateDeathMenu();
         }
     }
-    
-    private void Start() {
-        
+
+    private void ActivateDeathMenu()
+    {
+        Finder.FindDeathMenu().GetComponent<InGameMenu>().Pause();
+    }
+
+    public void Start()
+    {
         logger = Finder.FindLogger();
-        if (DeathMenu != null)
-        {
-            DeactivateMenu(DeathMenu); 
-        }   
     }
 
     public void DeactivateMenu(Canvas[] menus)
@@ -47,6 +46,11 @@ public class MenuManager : MonoBehaviour
     public void DeactivateMenu(Canvas menu)
     {
         menu.gameObject.SetActive(false);
+    }
+
+    public void DeactivateMenu(GameObject menu)
+    {
+        menu.SetActive(false);
     }
 
     public void ToggleMenu(Canvas menu)
@@ -64,6 +68,11 @@ public class MenuManager : MonoBehaviour
     public void ActivateMenu(Canvas menu)
     {
         menu.gameObject.SetActive(true);
+    }
+
+    public void ActivateMenu(GameObject menu)
+    {
+        menu.SetActive(true);
     }
 
     public void LoadMainMenueScene()
