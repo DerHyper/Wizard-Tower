@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public InputAction inputAction;
 
-    private bool isPlaying = true;
+    public bool isPlaying = true;
 
     private void Start() {
         moveSpeed = GetComponent<UnitDisplay>().GetMovementSpeed();
@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(isPlaying);
         if (isPlaying) LetPlayerMove();
     }
 

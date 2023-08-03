@@ -74,11 +74,12 @@ public class LevelManager : MonoBehaviour
             logger.Log($"Loading next scene: {nextSceneIndex}, {SceneManager.GetSceneByBuildIndex(nextSceneIndex).name}", this);
             SceneManager.LoadScene(nextSceneIndex);
         }
-        ResetGameManager();
+        ResetGame();
     }
 
-    private void ResetGameManager()
+    private void ResetGame()
     {
+        Time.timeScale = 1;
         GameManager.Instance.UpdateGameState(GameState.Playing);
     }
 
@@ -92,7 +93,7 @@ public class LevelManager : MonoBehaviour
         {
             logger.Log($"The Scene {sceneName} does not exist", this);
         }
-        ResetGameManager();
+        ResetGame();
     }
 
     public void LoadNextRandomScene()
@@ -106,7 +107,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(nextScene.name);
         currentLevel++;
         scenes.Remove(nextScene);
-        ResetGameManager();
+        ResetGame();
     }
 
 
