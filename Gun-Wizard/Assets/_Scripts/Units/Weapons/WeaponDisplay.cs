@@ -7,12 +7,16 @@ public class WeaponDisplay : MonoBehaviour
 {
     [SerializeField]
     Weapon weapon;
-
-    public float damageMultiplicator = 0;
+    [SerializeField]
+    private float damageMultiplicator;
+    [SerializeField]
+    private float attackSpeedMultiplicator;
 
     private void Start() 
     {
         UpdateSprite();
+        damageMultiplicator = PlayerStats.Instance.GetDamageMultiplicator();
+        attackSpeedMultiplicator = PlayerStats.Instance.GetAttackSpeedMultiplicator();
     }
 
     private void UpdateSprite()
@@ -58,7 +62,8 @@ public class WeaponDisplay : MonoBehaviour
     }
 
     public void SetMultiplicator(float multiplicator){
-        damageMultiplicator += multiplicator;
+        Debug.Log("Ich bin in Weapon Display");
+        this.damageMultiplicator = multiplicator;
     }
 
     public GameObject GetBullet()

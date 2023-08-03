@@ -40,6 +40,7 @@ public class ShopManagerScript : MonoBehaviour
             MoneyManager.Instance.UpdateText(); //Anzahl Coins Text updaten
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString(); //Anzahl gekaufte Items updaten
             PlayerStats.Instance.SetDamageMultiplicator(0.1f);
+            PlayerStats.Instance.SetAttackSpeedMultiplicator(0.1f);
             //player.GetComponent<PlayerHealth>().IncreaseHealth(0.5f);
 
         }
