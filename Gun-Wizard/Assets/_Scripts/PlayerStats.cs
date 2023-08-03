@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     float damageMultiplicator;
     [SerializeField]
     float attackSpeedMultiplicator;
-
+    
     WeaponDisplay weaponDisplay;
 
     private void Awake() {
@@ -32,11 +32,11 @@ public class PlayerStats : MonoBehaviour
 
     public void SetDamageMultiplicator(float amount)
     {
-        damageMultiplicator = amount;
+        damageMultiplicator += amount;
     }
     public void SetAttackSpeedMultiplicator(float amount)
     {
-        attackSpeedMultiplicator = amount;
+        attackSpeedMultiplicator += amount;
     }
 
     public float GetDamageMultiplicator()

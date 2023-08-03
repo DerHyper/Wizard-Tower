@@ -48,22 +48,18 @@ public class WeaponDisplay : MonoBehaviour
     // Get ShootingSpeed in Bullets per second 
     public float GetAttackSpeed()
     {
-        return weapon.attackSpeed;
+        return weapon.attackSpeed + weapon.attackSpeed * attackSpeedMultiplicator;
     }
 
     public float GetAttackInterval()
     {
-        return 1.0f/weapon.attackSpeed;
+        Debug.Log("Attack Speed: " + weapon.attackSpeed);
+        return 1.0f/GetAttackSpeed();
     }
 
     public void SetWeapon(Weapon weapon) {
         this.weapon = weapon;
         UpdateSprite();
-    }
-
-    public void SetMultiplicator(float multiplicator){
-        Debug.Log("Ich bin in Weapon Display");
-        this.damageMultiplicator = multiplicator;
     }
 
     public GameObject GetBullet()

@@ -39,10 +39,22 @@ public class ShopManagerScript : MonoBehaviour
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++; //Anzahl Items im Inventar erhöhen
             MoneyManager.Instance.UpdateText(); //Anzahl Coins Text updaten
             ButtonRef.GetComponent<ButtonInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString(); //Anzahl gekaufte Items updaten
-            PlayerStats.Instance.SetDamageMultiplicator(0.1f);
-            PlayerStats.Instance.SetAttackSpeedMultiplicator(0.1f);
+            if(ButtonRef.GetComponent<ButtonInfo>().ItemID == 1)
+            {
+                Debug.Log("");
+                return;
+            }
+            else if(ButtonRef.GetComponent<ButtonInfo>().ItemID == 2)
+            {
+                PlayerStats.Instance.SetDamageMultiplicator(0.1f);
+                return;
+            }
+            else if(ButtonRef.GetComponent<ButtonInfo>().ItemID == 3)
+            {
+                PlayerStats.Instance.SetAttackSpeedMultiplicator(1f);
+                return;
+            }
             //player.GetComponent<PlayerHealth>().IncreaseHealth(0.5f);
-
         }
     }
 }
