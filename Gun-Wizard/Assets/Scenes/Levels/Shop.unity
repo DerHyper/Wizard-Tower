@@ -1777,6 +1777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplicator: 0
+  attackSpeedMultiplicator: 0
 --- !u!1 &541506487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,7 +4007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87854e4e660756418e73e756aad8823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathMenu: {fileID: 781087457}
 --- !u!4 &1916273559
 Transform:
   m_ObjectHideFlags: 0
@@ -4305,7 +4305,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1916273558}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadLevelBuildScence
+        m_MethodName: LoadMainMenueScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
