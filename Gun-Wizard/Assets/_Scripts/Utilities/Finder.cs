@@ -74,4 +74,16 @@ public static class Finder
         }
         return lable;
     }
+
+    public static GameObject FindDeathMenu()
+    {
+        GameObject menu = GameObject.FindGameObjectWithTag("DeathMenu");
+        Debug.Log(menu+"Gefunden");
+        if (menu == null)
+        {
+            Debug.Log("Could not find menu");
+            throw new MissingComponentException();
+        }
+        return menu;
+    }
 }

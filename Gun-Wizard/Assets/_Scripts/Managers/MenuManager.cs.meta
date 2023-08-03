@@ -3,7 +3,9 @@ guid: b87854e4e660756418e73e756aad8823
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DeathMenuGO: {fileID: 6213583264779613252, guid: 7c6224aaee31c5f4c9c55771d502cad5, type: 3}
+  - OptionsMenuGO: {fileID: 3478906578838672872, guid: 31c8d5be43582584889c77f78c611faa, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
