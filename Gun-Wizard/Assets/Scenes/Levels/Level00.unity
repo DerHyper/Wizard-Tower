@@ -810,6 +810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3168906232482177803, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -984354222, guid: 4339e8ae88a823a4badf6dbaaa16f757, type: 3}
     - target: {fileID: 3168906233261115233, guid: c7ebfb510f3a0694dac3c325ef6d9103, type: 3}
       propertyPath: m_Name
       value: Minion
@@ -1316,14 +1320,6 @@ PrefabInstance:
     - target: {fileID: 2861508000259758025, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2861508000259758027, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
-      propertyPath: logger
-      value: 
-      objectReference: {fileID: 637701698}
-    - target: {fileID: 2861508000259758027, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}
-      propertyPath: inputManager
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3c083c0508a45489269a14cd8884d7, type: 3}

@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 3a7c58c6c23364444ba6ab0378d28b04, type: 2}
+  damageMultiplicator: 0
+  attackSpeedMultiplicator: 0
 --- !u!1 &2861508000259758025
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +229,7 @@ MonoBehaviour:
       m_Action: Input
       m_Flags: 0
     m_Flags: 0
+  isPlaying: 1
 --- !u!114 &2861508000259758021
 MonoBehaviour:
   m_ObjectHideFlags: 0
