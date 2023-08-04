@@ -14,7 +14,7 @@ public class ShopManagerScript : MonoBehaviour
    
     void Start()
     {
-        initArray(new int[3,3]{{1,2,3},{50,100,150},{0,0,0}});
+        initArray(new int[3,3]{{1,2,3},{999,10,20},{0,0,0}});
         player = Finder.FindPlayer();
     }
 
