@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(isPlaying);
+        //Debug.Log(isPlaying);
         if (isPlaying) LetPlayerMove();
     }
 
