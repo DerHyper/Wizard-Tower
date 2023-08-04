@@ -12,8 +12,8 @@ public class CameraFollow : MonoBehaviour
         this.target = Finder.FindPlayer().GetComponent<Transform>();
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         Vector3 newPosition = new Vector3(target.position.x, target.position.y, -10);
-        transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed*Time.deltaTime);
+        transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed*Time.fixedDeltaTime);
     }
 }
