@@ -23,7 +23,7 @@ public class ButtonInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PriceText.text = "Price: $" + ShopManager.GetComponent<ShopManagerScript>().shopItems[2, ItemID].ToString();
-        QuantityText.text = "Quantity: " + ShopManager.GetComponent<ShopManagerScript>().shopItems[3, ItemID].ToString();
+        PriceText.text = " $" + ShopManager.GetComponent<ShopManagerScript>().shopItems[2, ItemID].ToString();
+        QuantityText.text = "Level: " + ShopManager.GetComponent<ShopManagerScript>().shopItems[3, ItemID].ToString();
     }
 }
