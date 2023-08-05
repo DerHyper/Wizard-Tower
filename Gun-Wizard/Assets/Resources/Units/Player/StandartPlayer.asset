@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Standart one.
   artwork: {fileID: 1278760335, guid: dac39b036a6f6e2418f4c68a95570018, type: 3}
   movementSpeed: 5
-  maxHealth: 10
+  maxHealth: 20
   weapon: {fileID: 11400000, guid: 3a7c58c6c23364444ba6ab0378d28b04, type: 2}
   amountOfMoney: 0
   behaviour: 0
