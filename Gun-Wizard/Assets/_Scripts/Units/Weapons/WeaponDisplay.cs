@@ -51,10 +51,16 @@ public class WeaponDisplay : MonoBehaviour
         return weapon.attackSpeed + weapon.attackSpeed * attackSpeedMultiplicator;
     }
 
-    public float GetAttackInterval()
+    public float GetPlayerAttackInterval()
     {
         Debug.Log("Attack Speed: " + weapon.attackSpeed);
         return 1.0f/GetAttackSpeed();
+    }
+
+    public float GetAttackInterval()
+    {
+        Debug.Log("Attack Speed: " + weapon.attackSpeed);
+        return 1.0f/weapon.attackSpeed;
     }
 
     public void SetWeapon(Weapon weapon) {
