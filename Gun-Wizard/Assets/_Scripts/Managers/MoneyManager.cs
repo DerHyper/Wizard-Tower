@@ -8,7 +8,7 @@ public class MoneyManager : MonoBehaviour
     public static MoneyManager Instance;
 
     [SerializeField]
-    private int coins;
+    public int coins;
     
     void Awake()
     {
@@ -18,11 +18,15 @@ public class MoneyManager : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
-        UpdateText();
     }
     void Start()
     {
-        coins = 0;
+        
+    }
+
+    void Update()
+    {
+        UpdateText();
     }
 
     public int getCoins()
