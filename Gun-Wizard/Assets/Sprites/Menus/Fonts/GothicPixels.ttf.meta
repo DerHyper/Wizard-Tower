@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae649c62e06d06344b727c9be39f6f19
+guid: 0a07045a27e006f4885d3d894339e050
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixel Gothic Font
+  - GothicPixels
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
