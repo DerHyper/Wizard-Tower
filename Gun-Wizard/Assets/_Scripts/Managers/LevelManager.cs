@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        int maxScenes = SceneManager.sceneCountInBuildSettings;
+        int maxScenes = SceneManager.sceneCountInBuildSettings-1;
         
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneIndex >= maxScenes)
