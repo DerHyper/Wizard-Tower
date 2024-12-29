@@ -1,4 +1,4 @@
-# Wizard-Tower
+# Projekt Richter Otto
 
 
 
